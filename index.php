@@ -1,3 +1,31 @@
+
+<?php
+
+@include 'config.php';
+// $sql = "UPDATE visitor_counter SET counter = visits+1 WHERE id = 1";
+// $conn->query($sql);
+
+$sql = "SELECT counter FROM visitor_counter WHERE id = 1";
+// $result = $conn->query($sql);
+
+// if ($result->num_rows > 0) {
+//     while ($row = $result->fetch_assoc()) {
+//         $visits = $row["visits"];
+//     }
+// } else {
+//     echo "no results";
+// }
+// $conn->close();
+
+?>
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,16 +45,17 @@
 <body>
     <!-- header section start -->
     <header>
-        <a href="#" class="logo"><i class="fas fa-utensils"></i>GWSC.</a>
+        <a href="#" class="logo"><img src="images/logo.png" alt=""></a>
         <nav class="navbar">
-            <a class="active" href="#home">home</a>
-            <a href="#information">information</a>
-            <a href="#pitch">pitch type</a>
-            <a href="#availability">availability</a>
-            <a href="#reviews">reviews</a>
-            <a href="#feature">feature</a>
-            <a href="#feature">contact</a>
-            <a href="#localattractions">local attractions</a>
+            <a href="index.php">home</a>
+            <a href="information.php">information</a>
+            <a href="pitch.php">pitch type</a>
+            <a href="availability.php">availability</a>
+            <a href="reviews.php">reviews</a>
+            <a href="feature.php">feature</a>
+            <a href="contact.php">contact</a>
+            <a href="localattractions.php">local attractions</a>
+            <a class="active" href="login_form.php">Login</a>
         </nav>
 
         <div class="icons">
@@ -88,6 +117,24 @@
         </div>
     </section>
     <!-- home section End -->
+
+    <!-- section counter start -->
+    <section class="counter-section">
+        <div class="counter-column">
+            <div class="row">
+                <h2>2000+</h2>
+                <p>Total Visitor</p>
+            </div>
+            <div class="row">
+                <h2>6000+</h2>
+                <p>Total Customer</p>
+            </div>
+            <div class="row">
+                <h2>7000+</h2>
+                <p>Total Reviews</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Features section starts -->
     <section class="features" id="feature">

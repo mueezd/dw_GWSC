@@ -1,34 +1,3 @@
-<?php
-
-@include 'config.php';
-
-if(isset($_POST['submit'])){
-
-   $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
-   $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $password = md5($_POST['password']);
-   $cpassword = md5($_POST['cpassword']);
-   $user_type = $_POST['user_type'];
-
-   $select = "SELECT * FROM user_form WHERE email = '$email'";
-
-   $result = mysqli_query($conn, $select);
-
-   if(mysqli_num_rows($result) > 0){
-        $error[] = 'User Already Exist!';
-   }else{
-     if($password != $cpassword){
-        $error[] = 'Password not matched!';
-     }else{
-        $insert = "INSERT INTO user_form(first_name, last_name, email, password, user_type) VALUES ('$first_name','$last_name','$email','$password','$user_type')";
-        mysqli_query($conn, $insert);
-        header('location:login_form.php');
-     }
-   }
-};
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +5,7 @@ if(isset($_POST['submit'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register-GWSC</title>
+    <title>Welcome To Wild Swimming and Campining</title>
     <!-- Swipper CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <!-- fontawsam cdn -->
@@ -48,16 +17,18 @@ if(isset($_POST['submit'])){
 <body>
     <!-- header section start -->
     <header>
-        <a href="#" class="logo"><i class="fas fa-utensils"></i>GWSC.</a>
+
+        <a href="#" class="logo"><img src="images/logo.png" alt=""></a>
         <nav class="navbar">
-            <a class="active" href="#home">home</a>
-            <a href="#information">information</a>
-            <a href="#pitch">pitch type</a>
-            <a href="#availability">availability</a>
-            <a href="#reviews">reviews</a>
-            <a href="#feature">feature</a>
-            <a href="#feature">contact</a>
-            <a href="#localattractions">local attractions</a>
+            <a href="index.php">home</a>
+            <a href="information.php">information</a>
+            <a href="pitch.php">pitch type</a>
+            <a href="availability.php">availability</a>
+            <a href="reviews.php">reviews</a>
+            <a href="feature.php">feature</a>
+            <a href="contact.php">contact</a>
+            <a href="localattractions.php">local attractions</a>
+            <a class="active" href="login_form.php">Login</a>
         </nav>
 
         <div class="icons">
@@ -69,41 +40,54 @@ if(isset($_POST['submit'])){
     </header>
     <!-- header section end -->
 
-    <!-- search form start -->
+    <!-- search form -->
     <form action="" id="search-form">
         <input type="search" placeholder="search here..." name="" id="search-box">
         <label for="search-box" class="fas fa-search"></label>
         <i class="fas fa-times" id="close"></i>
     </form>
-    <!-- search form End -->
-
-    <!-- Register section start -->
-    <section class="register">
-        <div class="form-container">
-            <form action="" method="post">
-                <h3>Register Now</h3>
-                <?php
-                if(isset($error)){
-                    foreach($error as $error){
-                        echo '<span class="error-msg">'.$error.'</span>';
-                    };
-                };  
-                ?>
-                <input type="text" name="first_name" required placeholder="First Name">
-                <input type="text" name="last_name" required placeholder="Last Name">
-                <input type="email" name="email" required placeholder="Enter your Email">
-                <input type="password" name="password" required placeholder="Enter your password">
-                <input type="password" name="cpassword" required placeholder="Confirm your password">
-                <select name="user_type">
-                    <option value="user">user</option>
-                    <!-- <option value="admin">admin</option> -->
-                </select>
-                <input type="submit" name="submit" value="Register Now" class="form-btn">
-                <p>Already have an account? <a href="login_form.php">login now</a></p>
-            </form>
-        </div>
+    
+    <!-- Contact section start-->
+    <section class="contact" id="contact">
+        <h3 class="sub-heading">Contact</h3>
+        <h1 class="heading">Why choose us</h1>
+        <form action="">
+            <div class="inputBox">
+                <div class="input">
+                    <span>Your Name:</span>
+                    <input type="text" placeholder="enter your name" name="" id="">
+                </div>
+                <div class="input">
+                    <span>Your Name:</span>
+                    <input type="number" placeholder="enter your number" name="" id="">
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>Your Order:</span>
+                    <input type="text" placeholder="enter your order" name="" id="">
+                </div>
+                <div class="input">
+                    <span>Your Address:</span>
+                    <input type="text" placeholder="enter our address" name="" id="">
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>Your Queary:</span>
+                    <textarea name="" placeholder="Write your Queary" id="" cols="30" rows="10">
+                    </textarea>
+                </div>
+                <div class="input">
+                    <span>Your Message:</span>
+                    <textarea name="" placeholder="Write your Message" id="" cols="30" rows="10">
+                    </textarea>
+                </div>
+            </div>
+            <input type="submit" value="Contact Now" class="btn">
+        </form>
     </section>
-    <!-- Register section end -->
+    <!-- Contact section End-->
 
     <!-- Footer section start -->
     <section class="footer">
