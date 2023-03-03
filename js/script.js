@@ -39,6 +39,25 @@ document.querySelector('#close').onclick = () => {
   document.querySelector('#search-form').classList.remove('active');
 }
 
+// profile
+
+let profile = document.querySelector('header .profile');
+
+document.querySelector('#user-btn').onclick = () =>{
+   profile.classList.toggle('active');
+}
+
+window.onscroll = () =>{
+   profile.classList.remove('active');
+}
+
+document.querySelectorAll('input[type="number"]').forEach(inputNumber => {
+   inputNumber.oninput = () =>{
+      if(inputNumber.value.length > inputNumber.maxLength) inputNumber.value = inputNumber.value.slice(0, inputNumber.maxLength);
+   };
+});
+
+
 
 var swiper = new Swiper(".home-slider", {
   spaceBetween: 30,
@@ -77,4 +96,7 @@ var swiper = new Swiper(".review-slider", {
     },
   },
 });
+
+
+
 

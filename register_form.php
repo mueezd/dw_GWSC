@@ -2,30 +2,50 @@
 
 @include 'config.php';
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
 
-   $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
-   $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $password = md5($_POST['password']);
-   $cpassword = md5($_POST['cpassword']);
-   $user_type = $_POST['user_type'];
+    $id = create_unique_id();
+    $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
+    $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = md5($_POST['password']);
+    $cpassword = md5($_POST['cpassword']);
+    $user_type = $_POST['user_type'];
 
-   $select = "SELECT * FROM user_form WHERE email = '$email'";
+    $image = $_FILES['image_file']['name'];
+    $image = filter_var($image, FILTER_SANITIZE_STRING);
+    $ext = pathinfo($image, PATHINFO_EXTENSION);
+    $rename = create_unique_id().'.'.$ext;
+    $image_size = $_FILES['image_file']['size'];
+    $image_tmp_name = $_FILES['image_file']['tmp_name'];
+    $image_folder = 'user_uploaded_files/'.$rename;
 
-   $result = mysqli_query($conn, $select);
+    if(!empty($image)){
+        if($image_size < 2000000){
+            $warning_msg[] = 'Image size is too large!';
+        }else{
+            move_uploaded_file($image_tmp_name,$image_folder);
+        }
+    }else{
+        $rename = '';
+    }
 
-   if(mysqli_num_rows($result) > 0){
-        $error[] = 'User Already Exist!';
-   }else{
-     if($password != $cpassword){
-        $error[] = 'Password not matched!';
-     }else{
-        $insert = "INSERT INTO user_form(first_name, last_name, email, password, user_type) VALUES ('$first_name','$last_name','$email','$password','$user_type')";
-        mysqli_query($conn, $insert);
-        header('location:login_form.php');
-     }
-   }
+    $select = "SELECT * FROM user WHERE email = '$email'";
+
+    $result = mysqli_query($conn, $select);
+
+    if (mysqli_num_rows($result) > 0) {
+        $warning_msg[] = 'User Already Exist!';
+    } else {
+        if ($password != $cpassword) {
+            $warning_msg[] = 'Password not matched!';
+        } else {
+            $insert = "INSERT INTO user(id, first_name, last_name, email, password, user_type, image) VALUES ('$id','$first_name','$last_name','$email','$password','$user_type','$rename')";
+            mysqli_query($conn, $insert);
+            $success_msg[] = 'Registered successfully';
+            // header('location:login_form.php');
+        }
+    }
 };
 ?>
 
@@ -47,26 +67,7 @@ if(isset($_POST['submit'])){
 
 <body>
     <!-- header section start -->
-    <header>
-        <a href="#" class="logo"><i class="fas fa-utensils"></i>GWSC.</a>
-        <nav class="navbar">
-            <a class="active" href="#home">home</a>
-            <a href="#information">information</a>
-            <a href="#pitch">pitch type</a>
-            <a href="#availability">availability</a>
-            <a href="#reviews">reviews</a>
-            <a href="#feature">feature</a>
-            <a href="#feature">contact</a>
-            <a href="#localattractions">local attractions</a>
-        </nav>
-
-        <div class="icons">
-            <i class="fas fa-bars" id="menu-bar"></i>
-            <i class="fas fa-search" id="search-icons"></i>
-            <a href="#" class="fas fa-shopping-cart"></a>
-        </div>
-
-    </header>
+    <?php include 'components/header.php'; ?>
     <!-- header section end -->
 
     <!-- search form start -->
@@ -83,11 +84,11 @@ if(isset($_POST['submit'])){
             <form action="" method="post">
                 <h3>Register Now</h3>
                 <?php
-                if(isset($error)){
-                    foreach($error as $error){
-                        echo '<span class="error-msg">'.$error.'</span>';
+                if (isset($error)) {
+                    foreach ($error as $error) {
+                        echo '<span class="error-msg">' . $error . '</span>';
                     };
-                };  
+                };
                 ?>
                 <input type="text" name="first_name" required placeholder="First Name">
                 <input type="text" name="last_name" required placeholder="Last Name">
@@ -98,6 +99,7 @@ if(isset($_POST['submit'])){
                     <option value="user">user</option>
                     <!-- <option value="admin">admin</option> -->
                 </select>
+                <input type="file" name="image_file" accept="image/*">
                 <input type="submit" name="submit" value="Register Now" class="form-btn">
                 <p>Already have an account? <a href="login_form.php">login now</a></p>
             </form>
@@ -106,51 +108,19 @@ if(isset($_POST['submit'])){
     <!-- Register section end -->
 
     <!-- Footer section start -->
-    <section class="footer">
-        <div class="box-container">
-            <div class="box">
-                <h3>locations</h3>
-                <a href="#">india</a>
-                <a href="#">japan</a>
-                <a href="#">russia</a>
-                <a href="#">USA</a>
-                <a href="#">UK</a>
-                <a href="#">Bangladesh</a>
-            </div>
-            <div class="box">
-                <h3>Quick Links</h3>
-                <a href="#">information</a>
-                <a href="#">pitch Type</a>
-                <a href="#">Availability</a>
-                <a href="#">Reviews</a>
-                <a href="#">Features</a>
-                <a href="#">Contact</a>
-                <a href="#">Local Attractions</a>
-            </div>
-            <div class="box">
-                <h3>Contact Info</h3>
-                <a href="#">+123-456-7890</a>
-                <a href="#">+111-222-7890</a>
-                <a href="#">info@gwsc.org</a>
-                <a href="#">Park Street London, United kingdom</a>
-            </div>
-            <div class="box">
-                <h3>follow us</h3>
-                <a href="#">facebook</a>
-                <a href="#">twitter</a>
-                <a href="#">instagram</a>
-                <a href="#">youtube</a>
-            </div>
-        </div>
-        <div class="credit">copyright @ 2023 by <span>deepro__</span></div>
-    </section>
+    <?php include 'components/footer.php'?>
     <!-- Footer section end -->
 
 
     <!-- Swipper JS CND -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- sweetalart cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- custom js file link -->
     <script src="js/script.js"></script>
+
+
+    <?php include 'components/alerts.php'; ?>
 </body>
 
 </html>

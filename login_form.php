@@ -1,6 +1,6 @@
 <?php
 
-@include 'config.php';
+@include 'components/config.php';
 
 session_start();
 
@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
     $cpassword = md5($_POST['cpassword']);
     $user_type = $_POST['user_type'];
 
-    $select = "SELECT * FROM user_form WHERE email = '$email'";
+    $select = "SELECT * FROM user WHERE email = '$email'";
 
     $result = mysqli_query($conn, $select);
 

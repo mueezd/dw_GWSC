@@ -1,30 +1,10 @@
-
 <?php
-
-@include 'config.php';
-// $sql = "UPDATE visitor_counter SET counter = visits+1 WHERE id = 1";
-// $conn->query($sql);
-
-$sql = "SELECT counter FROM visitor_counter WHERE id = 1";
-// $result = $conn->query($sql);
-
-// if ($result->num_rows > 0) {
-//     while ($row = $result->fetch_assoc()) {
-//         $visits = $row["visits"];
-//     }
-// } else {
-//     echo "no results";
-// }
-// $conn->close();
-
+@include 'components/config.php';
+// @include 'components/count.php';
+// count_visitor();
+$visitor_counter_add = $conn->prepare("UPDATE visitor_counter SET counter = counter+1 WHERE id = 1;");
+$visitor_counter_add->execute();
 ?>
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,27 +24,7 @@ $sql = "SELECT counter FROM visitor_counter WHERE id = 1";
 
 <body>
     <!-- header section start -->
-    <header>
-        <a href="#" class="logo"><img src="images/logo.png" alt=""></a>
-        <nav class="navbar">
-            <a href="index.php">home</a>
-            <a href="information.php">information</a>
-            <a href="pitch.php">pitch type</a>
-            <a href="availability.php">availability</a>
-            <a href="reviews.php">reviews</a>
-            <a href="feature.php">feature</a>
-            <a href="contact.php">contact</a>
-            <a href="localattractions.php">local attractions</a>
-            <a class="active" href="login_form.php">Login</a>
-        </nav>
-
-        <div class="icons">
-            <i class="fas fa-bars" id="menu-bar"></i>
-            <i class="fas fa-search" id="search-icons"></i>
-            <a href="#" class="fas fa-shopping-cart"></a>
-        </div>
-
-    </header>
+    <?php include 'components/header.php'; ?>
     <!-- header section end -->
 
     <!-- search form -->
@@ -80,10 +40,10 @@ $sql = "SELECT counter FROM visitor_counter WHERE id = 1";
             <div class="swiper-wrapper wrapper">
                 <div class="swiper-slide slide">
                     <div class="content">
-                        <span>Our Special Offer</span>
-                        <h3>Spicy Noodols</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, dolorum!</p>
-                        <a href="#" class="btn">Register Now</a>
+                        <span>weekend camping</span>
+                        <h3>Book Now</h3>
+                        <p>Reservations for our 2023 weekends will begin in early March; we will advertise here and on Facebook a week before bookings are available.!</p>
+                        <a href="register.php" class="btn">Register Now</a>
                     </div>
                     <div class="image">
                         <img src="images/home-1.jpg" alt="">
@@ -91,10 +51,10 @@ $sql = "SELECT counter FROM visitor_counter WHERE id = 1";
                 </div>
                 <div class="swiper-slide slide">
                     <div class="content">
-                        <span>Our Special Offer</span>
-                        <h3>Spicy Noodols</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, dolorum!</p>
-                        <a href="#" class="btn">Register Now</a>
+                        <span>Special Offer</span>
+                        <h3>Information</h3>
+                        <p>Camping, touring, and glamping are available in beautiful Snowdon by a river that is perfect for swimming, fishing, and walking.</p>
+                        <a href="information.php" class="btn">More Info</a>
                     </div>
                     <div class="image">
                         <img src="images/home-2.jpg" alt="">
@@ -102,10 +62,10 @@ $sql = "SELECT counter FROM visitor_counter WHERE id = 1";
                 </div>
                 <div class="swiper-slide slide">
                     <div class="content">
-                        <span>Our Special Offer</span>
-                        <h3>Spicy Noodols</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, dolorum!</p>
-                        <a href="#" class="btn">Register Now</a>
+                        <span>What Barefoot Campers say</span>
+                        <h3>Reviews</h3>
+                        <p>Want a memorable outdoor adventure? Wild Swimming and Camping! This is the best way to explore nature, whether you're a seasoned camper or a novice.</p>
+                        <a href="review.php" class="btn">Check Now</a>
                     </div>
                     <div class="image">
                         <img src="images/home-3.jpg" alt="">
@@ -122,15 +82,42 @@ $sql = "SELECT counter FROM visitor_counter WHERE id = 1";
     <section class="counter-section">
         <div class="counter-column">
             <div class="row">
-                <h2>2000+</h2>
+                <?php
+                $select_counter = $conn->prepare("SELECT * FROM `visitor_counter` WHERE id = 1");
+                $select_counter->execute();
+                if ($select_counter->rowCount() > 0) {
+                    $fetch_counter = $select_counter->fetch(PDO::FETCH_ASSOC);
+                ?>
+                    <h2><?= $fetch_counter['counter']; ?>+</h2>
+                <?php
+                }
+                ?>
                 <p>Total Visitor</p>
             </div>
             <div class="row">
-                <h2>6000+</h2>
+                <?php
+                $select_user = $conn->prepare("SELECT COUNT(id) FROM `users`");
+                $select_user->execute();
+                if ($select_user->rowCount() > 0) {
+                    $fetch_user = $select_user->fetch(PDO::FETCH_ASSOC);
+                ?>
+                    <h2><?= $fetch_user['COUNT(id)']; ?>+</h2>
+                <?php
+                }
+                ?>
                 <p>Total Customer</p>
             </div>
             <div class="row">
-                <h2>7000+</h2>
+                <?php
+                $select_reviews = $conn->prepare("SELECT COUNT(Id) FROM `reviews`;");
+                $select_reviews->execute();
+                if ($select_reviews->rowCount() > 0) {
+                    $fetch_reviews = $select_reviews->fetch(PDO::FETCH_ASSOC);
+                ?>
+                    <h2><?= $fetch_reviews['COUNT(Id)']; ?>+</h2>
+                <?php
+                }
+                ?>
                 <p>Total Reviews</p>
             </div>
         </div>
@@ -229,6 +216,18 @@ $sql = "SELECT counter FROM visitor_counter WHERE id = 1";
         </div>
     </section>
     <!-- Features section End -->
+    <!-- location maps section start -->
+    <section class="locationmaps">
+        <h3 class="sub-heading">Camping Locations</h3>
+        <h1 class="heading">Choose your Location</h1>
+        <div class="map-box">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d623588.1411459859!2d-0.5531635990128747!3d52.37239322605558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c72fe0155517%3A0x9df0b6a5da4ed30b!2sWild%20Swimming%20Coach!5e0!3m2!1sen!2sbd!4v1677846917650!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div>
+
+        </div>
+    </section>
+    <!-- location maps section end -->
 
     <!-- information section start -->
     <section class="information" id="information">
@@ -484,8 +483,12 @@ $sql = "SELECT counter FROM visitor_counter WHERE id = 1";
 
     <!-- Swipper JS CND -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- sweetalart cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- custom js file link -->
     <script src="js/script.js"></script>
+    <?php include 'components/alerts.php'; ?>
+
 </body>
 
 </html>
