@@ -19,13 +19,6 @@ include 'components/config.php';
 </head>
 
 <body>
-    <!-- search form -->
-    <form action="" id="search-form">
-        <input type="search" placeholder="search here..." name="" id="search-box">
-        <label for="search-box" class="fas fa-search"></label>
-        <i class="fas fa-times" id="close"></i>
-    </form>
-
     <!-- header section starts  -->
     <?php include 'components/header.php'; ?>
     <!-- header section ends -->

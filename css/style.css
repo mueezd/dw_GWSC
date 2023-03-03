@@ -32,7 +32,7 @@ html {
 }
 
 section {
-    padding: 2rem 9%;
+    padding: 2rem 7%;
 }
 
 /* 
@@ -183,12 +183,11 @@ section:nth-child(even) {
 
 header {
     position: fixed;
-    height: 15vh;
     top: 0;
     left: 0;
     right: 0;
     background: #fff;
-    padding: 1.5rem 7%;
+    padding: 1rem 7%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -388,6 +387,9 @@ header .icons #menu-bar {
     color: #fff;
 }
 
+section .features{
+    padding-top: 11rem;
+}
 
 .features .box-container {
     display: grid;
@@ -404,6 +406,10 @@ header .icons #menu-bar {
     position: relative;
     overflow: hidden;
     text-align: center;
+}
+.features .box-container .box p {
+    font-size: 1.5rem;
+    text-align: justify;
 }
 
 .features .box-container .box .fa-heart,
@@ -467,11 +473,22 @@ header .icons #menu-bar {
     font-size: 2.5rem;
 }
 
+section .information{
+    padding-top: 11rem;
+}
+
 .information .row {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
     align-items: center;
+    border: 0.1rem solid rgba(0, 0, 0, .1);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.information .row-revarse{
+    flex-direction: row-reverse;
 }
 
 .information .row .image {
@@ -480,7 +497,14 @@ header .icons #menu-bar {
 
 .information .row .image img {
     width: 100%;
+    border-radius: 10px;
 }
+.information .row .image iframe {
+    width: 55rem;  
+    height: 36rem;
+    border-radius: 10px;
+}
+
 
 .information .row .content {
     flex: 1 1 35rem;

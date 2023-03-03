@@ -27,13 +27,6 @@ $visitor_counter_add->execute();
     <?php include 'components/header.php'; ?>
     <!-- header section end -->
 
-    <!-- search form -->
-    <form action="" id="search-form">
-        <input type="search" placeholder="search here..." name="" id="search-box">
-        <label for="search-box" class="fas fa-search"></label>
-        <i class="fas fa-times" id="close"></i>
-    </form>
-
     <!-- home section start -->
     <section class="home" id="#home">
         <div class="swiper mySwiper home-slider">
@@ -127,13 +120,12 @@ $visitor_counter_add->execute();
     <section class="features" id="feature">
         <h3 class="sub-heading">Our Features</h3>
         <h1 class="heading">Popular features</h1>
-
         <div class="box-container">
             <div class="box">
                 <a href="#" class="fas fa-heart"></a>
                 <a href="#" class="fas fa-eye"></a>
                 <img src="images/f-1.jpg" alt="">
-                <h3>Good Feature</h3>
+                <h3>leisure facilities</h3>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -142,15 +134,13 @@ $visitor_counter_add->execute();
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <span>$14.95</span>
-                <a href="" class="btn">Add to Cart</a>
+                <a href="feature.php" class="btn">Read More..</a>
             </div>
-
             <div class="box">
                 <a href="#" class="fas fa-heart"></a>
                 <a href="#" class="fas fa-eye"></a>
-                <img src="images/f-1.jpg" alt="">
-                <h3>Good Feature</h3>
+                <img src="images/f-2.jpg" alt="">
+                <h3>entertainment</h3>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -159,15 +149,13 @@ $visitor_counter_add->execute();
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <span>$14.95</span>
-                <a href="" class="btn">Add to Cart</a>
+                <a href="feature.php" class="btn">Read More..</a>
             </div>
-
             <div class="box">
                 <a href="#" class="fas fa-heart"></a>
                 <a href="#" class="fas fa-eye"></a>
-                <img src="images/f-1.jpg" alt="">
-                <h3>Good Feature</h3>
+                <img src="images/f-3.webp" alt="">
+                <h3>car parking</h3>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -176,42 +164,7 @@ $visitor_counter_add->execute();
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <span>$14.95</span>
-                <a href="" class="btn">Add to Cart</a>
-            </div>
-
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-                <img src="images/f-1.jpg" alt="">
-                <h3>Good Feature</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <span>$14.95</span>
-                <a href="" class="btn">Add to Cart</a>
-            </div>
-
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-                <img src="images/f-1.jpg" alt="">
-                <h3>Good Feature</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <span>$14.95</span>
-                <a href="" class="btn">Add to Cart</a>
+                <a href="feature.php" class="btn">Read More..</a>
             </div>
         </div>
     </section>
@@ -235,33 +188,29 @@ $visitor_counter_add->execute();
         <h1 class="heading">Why choose us?</h1>
         <div class="row">
             <div class="image">
-                <img src="images/info-1.jpg" alt="">
+                <img src="images/information-1.jpg" alt="">
             </div>
             <div class="content">
-                <h3>Lorem ipsum dolor sit amet.</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, quod
-                    modi molestias maxime velit beatae magni aut ea sapiente! Aliquam odit facere
-                    sequi ad sint ipsam sed aspernatur a nesciunt.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum sequi alias a
-                    incidunt repellat sint quo vero voluptatum vitae repellendus!</p>
+                <h3>pitch types and availability</h3>
+                <p>Pitch types for camping and caravanning include tent pitches, touring caravan pitches, and motorhome pitches. Tent pitches are ideal for those who prefer a more authentic outdoor experience, while touring caravan pitches offer more space and amenities. Motorhome pitches are designed to accommodate larger vehicles and often come with electrical hook-ups and waste disposal facilities. The availability of pitches varies depending on the location and season, so it's important to book in advance to secure your spot. It's also important to note that some campsites may have restrictions on the size and type of pitches available.</p>
                 <div class="icons-container">
                     <div class="icons">
-                        <i class="fas fa-shipping-fast"></i>
-                        <span>Free Delivery</span>
+                        <i class="fas fa-campground"></i>
+                        <span>tent pitch</span>
                     </div>
                     <div class="icons">
-                        <i class="fas fa-dollar-sign"></i>
-                        <span>Easy Payments</span>
+                        <i class="fas fa-caravan"></i>
+                        <span>caravan pitch</span>
                     </div>
                     <div class="icons">
-                        <i class="fas fa-headset"></i>
-                        <span>24/7 Service</span>
+                        <i class="fas fa-home"></i>
+                        <span>motorhome pitch</span>
                     </div>
                 </div>
-                <a href="#" class="btn">Learn More</a>
+                <a href="information.php" class="btn">Learn More</a>
             </div>
         </div>
-
+        </div>
     </section>
     <!-- information section Ends -->
 
@@ -388,96 +337,15 @@ $visitor_counter_add->execute();
     </section>
     <!-- availability section ends  -->
 
-
-
     <!-- local attracton section start-->
     <section class="locala" id="locala">
         <h3 class="sub-heading">local attracton</h3>
         <h1 class="heading">Why choose us</h1>
     </section>
     <!-- local attracton section End-->
-
-    <!-- Contact section start-->
-    <section class="contact" id="contact">
-        <h3 class="sub-heading">Contact</h3>
-        <h1 class="heading">Why choose us</h1>
-        <form action="">
-            <div class="inputBox">
-                <div class="input">
-                    <span>Your Name:</span>
-                    <input type="text" placeholder="enter your name" name="" id="">
-                </div>
-                <div class="input">
-                    <span>Your Name:</span>
-                    <input type="number" placeholder="enter your number" name="" id="">
-                </div>
-            </div>
-            <div class="inputBox">
-                <div class="input">
-                    <span>Your Order:</span>
-                    <input type="text" placeholder="enter your order" name="" id="">
-                </div>
-                <div class="input">
-                    <span>Your Address:</span>
-                    <input type="text" placeholder="enter our address" name="" id="">
-                </div>
-            </div>
-            <div class="inputBox">
-                <div class="input">
-                    <span>Your Queary:</span>
-                    <textarea name="" placeholder="Write your Queary" id="" cols="30" rows="10">
-                    </textarea>
-                </div>
-                <div class="input">
-                    <span>Your Message:</span>
-                    <textarea name="" placeholder="Write your Message" id="" cols="30" rows="10">
-                    </textarea>
-                </div>
-            </div>
-            <input type="submit" value="Contact Now" class="btn">
-        </form>
-    </section>
-    <!-- Contact section End-->
-
+    
     <!-- Footer section start -->
-    <section class="footer">
-        <div class="box-container">
-            <div class="box">
-                <h3>locations</h3>
-                <a href="#">india</a>
-                <a href="#">japan</a>
-                <a href="#">russia</a>
-                <a href="#">USA</a>
-                <a href="#">UK</a>
-                <a href="#">Bangladesh</a>
-            </div>
-            <div class="box">
-                <h3>Quick Links</h3>
-                <a href="#">information</a>
-                <a href="#">pitch Type</a>
-                <a href="#">Availability</a>
-                <a href="#">Reviews</a>
-                <a href="#">Features</a>
-                <a href="#">Contact</a>
-                <a href="#">Local Attractions</a>
-            </div>
-            <div class="box">
-                <h3>Contact Info</h3>
-                <a href="#">+123-456-7890</a>
-                <a href="#">+111-222-7890</a>
-                <a href="#">info@gwsc.org</a>
-                <a href="#">Park Street London, United kingdom</a>
-            </div>
-            <div class="box">
-                <h3>follow us</h3>
-                <a href="#">facebook</a>
-                <a href="#">twitter</a>
-                <a href="#">instagram</a>
-                <a href="#">youtube</a>
-            </div>
-        </div>
-        <div class="credit">copyright @ 2023 by <span>deepro__</span></div>
-    </section>
+    <?php include 'components/footer.php'; ?>
     <!-- Footer section end -->
 
 
