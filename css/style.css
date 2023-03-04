@@ -6,6 +6,7 @@
     --red: #eb4d4b;
     --orange: #f39c12;
     --light-color: #666;
+    --gray-color: #c9c6c6;
     --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
     --green-gradient: rgb(6, 129, 57);
     --white: #fff;
@@ -241,7 +242,26 @@ header .icons i:hover,
 header .icons a:hover {
     color: #fff;
     background: var(--green);
-    transform: rotate(360deg);
+    /* transform: rotate(360deg); */
+}
+
+header .icons .fa-shopping-cart {
+    margin: 0;
+    transform: unset;
+}
+
+header .icons a span {
+    position: absolute;
+    top: 20px;
+    right: 130px;
+    width: 25px;
+    height: 25px;
+    background: var(--orange);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
 }
 
 header .icons #menu-bar {
@@ -264,7 +284,7 @@ header .icons #menu-bar {
 #user-btn:hover {
     color: #fff;
     background: var(--green);
-    transform: rotate(360deg);
+    /* transform: rotate(360deg); */
 }
 
 #search-form {
@@ -387,7 +407,7 @@ header .icons #menu-bar {
     color: #fff;
 }
 
-section .features{
+section .features {
     padding-top: 11rem;
 }
 
@@ -407,6 +427,7 @@ section .features{
     overflow: hidden;
     text-align: center;
 }
+
 .features .box-container .box p {
     font-size: 1.5rem;
     text-align: justify;
@@ -473,7 +494,7 @@ section .features{
     font-size: 2.5rem;
 }
 
-section .information{
+section .information {
     padding-top: 11rem;
 }
 
@@ -487,7 +508,7 @@ section .information{
     border-radius: 15px;
 }
 
-.information .row-revarse{
+.information .row-revarse {
     flex-direction: row-reverse;
 }
 
@@ -499,8 +520,9 @@ section .information{
     width: 100%;
     border-radius: 10px;
 }
+
 .information .row .image iframe {
-    width: 55rem;  
+    width: 55rem;
     height: 36rem;
     border-radius: 10px;
 }
@@ -553,17 +575,75 @@ section .information{
     color: var(--black);
 }
 
+section .availability {
+    padding-top: 11rem;
+}
+
+section .availability .p-search {
+    width: 50%;
+    position: relative;
+    display: flex;
+    padding-bottom: 2rem;
+    justify-content: right;
+    padding-left: 4rem;
+}
+
+section .availability .p-search input {
+    width: 100%;
+    border: 0.1rem solid var(--black);
+    border-right: none;
+    padding: 1.7rem;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: var(--light-color);
+    font-size: 2rem;
+}
+
+section .availability .p-search input:focus {
+    border: 0.1rem solid var(--green);
+    color: var(--light-color);
+}
+
+section .availability .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid var(--black);
+    background: var(--black);
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+section .availability .searchButton:focus {
+    border: 1px solid var(--green);
+    color: #fff;
+    background: var(--green);
+
+}
+
 .availability .box-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fit, 35rem);
+    align-items: flex-start;
+    justify-content: center;
     gap: 1.5rem;
 }
 
 .availability .box-container .box {
-    background: #fff;
+    border: var(--border);
+    box-shadow: var(--box-shodow);
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    /* background: #fff;
     border: .1rem solid rgba(0, 0, 0, .2);
     border-radius: .5rem;
     box-shadow: var(--box-shadow);
+    width: 35rem;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); */
 }
 
 .availability .box-container .box .image {
@@ -572,6 +652,7 @@ section .information{
     padding: 1.5rem;
     overflow: hidden;
     position: relative;
+    border-radius: 2rem;
 }
 
 .availability .box-container .box .image img {
@@ -581,7 +662,7 @@ section .information{
     object-fit: cover;
 }
 
-.availability .box-container .box .image .fa-heart {
+.availability .box-container .box .fa-heart {
     position: absolute;
     top: 2.5rem;
     right: 2.5rem;
@@ -595,7 +676,7 @@ section .information{
     color: var(--black);
 }
 
-.availability .box-container .box .image .fa-heart:hover {
+.availability .box-container .box .fa-heart:hover {
     background-color: var(--green);
     color: #fff;
 }
@@ -629,7 +710,27 @@ section .information{
 .availability .box-container .box .contect .price {
     color: var(--green);
     margin-left: 1rem;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    padding-right: 8rem;
+    font-weight: bold;
+}
+
+.availability .box-container .box .contect .flex-box {
+    padding-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.availability .box-container .box .contect .flex-box input {
+    padding-left: 1rem;
+    font-size: 2.2rem;
+    border: 0.1rem solid var(--black);
+    border-radius: 0.5rem;
+    margin: 0;
+    height: 3.5rem;
+    width: 6rem;
+    background: #eee;
 }
 
 .review .slide {
@@ -679,6 +780,10 @@ section .information{
     color: var(--light-color);
 }
 
+section .contact {
+    padding-top: 10rem;
+}
+
 .contact form {
     max-width: 90rem;
     border-radius: .5rem;
@@ -726,6 +831,10 @@ section .information{
 .contact form .inputBox .input textarea {
     height: 20rem;
     resize: none;
+}
+
+section .booking-cart {
+    padding-top: 11rem;
 }
 
 .footer {
@@ -918,7 +1027,9 @@ section .information{
     object-fit: cover;
     margin-bottom: 1.5rem;
 }
-
+section .all-posts {
+    padding-top: 10rem;
+}
 .all-posts .box-container .box .title {
     font-size: 2rem;
     color: var(--black);
@@ -1147,14 +1258,74 @@ header .profile .image {
 }
 
 /* Location Maps  */
-.locationmaps .map-box{
+.locationmaps .map-box {
     text-align: center;
     margin: 0;
 }
-.locationmaps .map-box iframe{
+
+.locationmaps .map-box iframe {
     width: 1100px;
     height: 500px;
     border-radius: 20px;
+}
+
+/* booking cart  */
+.booking-cart .box-container {
+
+}
+
+.booking-cart .box-container form.box {
+    padding: 1rem;
+    border: 0.1rem solid var(--gray-color);
+    margin: 1rem;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    /* display: table-row; */
+    /* grid-template-rows: repeat(auto-fit, 35rem); */
+}
+
+
+.booking-cart .box-container form {
+    display: flex;
+}
+
+.booking-cart .box-container img {
+    width: 15rem;
+    border-radius: 2rem;
+}
+
+.booking-cart .box-container h3.name {
+    font-size: 1.8rem;
+}
+.booking-cart .box-container p.sub-total,
+.booking-cart .box-container p.price {
+    font-size: 1.5rem;
+    text-align: right;
+    color: var(--green);
+    font-weight: bold;
+}
+
+
+.booking-cart .box-container input.btn-booking-delete {
+    background: var(--orange);
+    cursor: pointer;
+    height: 4rem;
+    width: 10rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.booking-cart .box-container input.btn-booking-delete:hover{
+    background-color: var(--red);
+}
+
+
+/* local attraction  */
+section .local-atr {
+    padding-top: 10rem;
 }
 
 /* Account from  */
@@ -1165,6 +1336,13 @@ header .profile .image {
     header .navbar a {
         font-size: 1.5rem;
     }
+
+    header .icons a span {
+  
+        top: 20px;
+        right: 90px;
+        width: 25px;
+        
 }
 
 @media(max-width:991px) {

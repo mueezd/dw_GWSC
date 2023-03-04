@@ -4,8 +4,8 @@
         <nav class="navbar">
             <a href="index.php">home</a>
             <a href="information.php">information</a>
-            <a href="pitch.php">pitch type</a>
-            <a href="availability.php">availability</a>
+            <a href="pitch.php">pitch type & availability</a>
+            <!-- <a href="availability.php">availability</a> -->
             <a href="review.php">reviews</a>
             <a href="feature.php">features</a>
             <a href="contact.php">contact</a>
@@ -20,6 +20,12 @@
             if ($user_id != '') {
             ?>
                 <div id="user-btn" class="far fa-user"></div>
+                <?php
+                $count_cart_items = $conn->prepare("SELECT * FROM `booking` WHERE user_id = ?");
+                $count_cart_items->execute([$user_id]);
+                $total_cart_items = $count_cart_items->rowCount();
+                ?>
+                <a href="booking_cart.php" class="fas fa-shopping-cart"><span><?= $total_cart_items; ?></span></a>
             <?php }; ?>
         </div>
         <?php
