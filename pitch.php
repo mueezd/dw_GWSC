@@ -62,17 +62,56 @@ if (isset($_POST['add_to_booking'])) {
     <?php include 'components/header.php'; ?>
     <!-- header section end -->
 
+    <!-- search section start  -->
+    <section>
+        <form method="post" action="" class="p-search">
+            <input type="text" name="search_box" placeholder="search here..." class="box">
+            <button type="submit" name="search_btn" class="fas fa-search searchButton"></button>
+        </form>
+    </section>
+    <!-- demo search  -->
+    <section>
+        <div class="box-container">
+            <?php
+            if (isset($_POST['search_box']) or isset($_POST['search_btn'])) {
+                $search_box = $_POST['search_box'];
+                $select_pitch = $conn->prepare("SELECT * FROM `pitch` WHERE name LIKE '%{$search_box}%'");
+                $select_pitch->execute();
+                if ($select_pitch->rowCount() > 0) {
+                    while ($fetch_pitch = $select_pitch->fetch(PDO::FETCH_ASSOC)) {
+            ?>
+                        <form action="" method="post" class="box">
+                            <input type="hidden" name="pid" value="<?= $fetch_pitch['id']; ?>">
+                            <input type="hidden" name="name" value="<?= $fetch_pitch['name']; ?>">
+                            <input type="hidden" name="price" value="<?= $fetch_pitch['price']; ?>">
+                            <input type="hidden" name="image" value="<?= $fetch_pitch['image']; ?>">
+                            <a href="quick_view.php?pid=<?= $fetch_pitch['id']; ?>" class="fas fa-eye"></a>
+                            <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
+                            <img src="uploaded_files_pitch/<?= $fetch_pitch['image']; ?>" alt="">
+                            <!-- <a href="category.php?category=<?= $fetch_pitch['category']; ?>" class="cat"><?= $fetch_pitch['category']; ?></a> -->
+                            <div class="name"><?= $fetch_pitch['name']; ?></div>
+                            <div class="flex">
+                                <div class="price"><span>$</span><?= $fetch_pitch['price']; ?></div>
+                                <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
+                            </div>
+                        </form>
+            <?php
+                    }
+                } else {
+                    echo '<p class="empty">no pitch added yet!</p>';
+                }
+            }
+            ?>
+
+        </div>
+    </section>
+    <!-- search section end  -->
+
     <!-- pitch type section start -->
     <section id="availability">
         <div class="availability">
             <h3 class="sub-heading">Book Now</h3>
             <h1 class="heading">Pitch Type & Availability</h1>
-            <div class="p-search">
-                <input type="text" placeholder="What are you looking for?">
-                <button type="submit" class="searchButton">
-                    <i class="fa fa-search"></i>
-                </button>
-            </div>
             <div class="box-container">
                 <?php
                 $select_pitch = $conn->prepare("SELECT * FROM `pitch`");

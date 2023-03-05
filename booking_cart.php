@@ -115,7 +115,7 @@ if (isset($_POST['empty_cart'])) {
                         }
                     }
                 } else {
-                    echo '<p class="empty">your cart is empty!</p>';
+                    echo '<p class="empty">your booking cart is empty!</p>';
                 }
                 ?>
             </div>
@@ -127,7 +127,7 @@ if (isset($_POST['empty_cart'])) {
                             <form action="" method="POST">
                                 <input type="submit" value="empty cart" name="empty_cart" class="delete-btn" onclick="return confirm('empty your cart?');">
                             </form>
-                            <a href="checkout.php" class="btn">proceed to checkout</a>
+                            <a href="confirm_booking.php" class="btn">proceed to checkout</a>
                         </div>
                     </div>
                 <?php } ?>

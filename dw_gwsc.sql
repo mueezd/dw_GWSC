@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2023 at 07:16 PM
+-- Generation Time: Mar 05, 2023 at 08:20 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -45,11 +45,41 @@ INSERT INTO `booking` (`id`, `user_id`, `pitch_id`, `price`, `qty`) VALUES
 ('9x7vkwcghPoBJwAjuAzg', 'ISUe5moEVn9iAQRQOACX', 'f8xakD1ne3h5aEb0sNxG', '500', '5'),
 ('Ri6HWTIvtAY62srbEpK2', '4TYFZ35QpEmReJ2iZTx6', 'aa7jWBNhR9tNWdHU7Lq0', '50', '30'),
 ('t7ZI9jNF3P4euchXr9PU', '4TYFZ35QpEmReJ2iZTx6', 'f8xakD1ne3h5aEb0sNxG', '500', '1'),
-('nmsiKptVp0x10TBtHIfp', '4TYFZ35QpEmReJ2iZTx6', 'RP0mT1eFwp7BXrd9rXfn', '1', '1'),
-('WJEZ5kQZckchPoxHeaUB', 'T24PpTdsfjPjZ04Bz5hE', 'WL8uS1QcxYocxnv6fC17', '50', '1'),
-('WQdBNVtr1Gt9RxJrfH2o', 'T24PpTdsfjPjZ04Bz5hE', 'SIayjt6XRWpaNcqhv2Cn', '70', '1'),
-('NADmEiPsXSXELxJXjKz4', 'T24PpTdsfjPjZ04Bz5hE', 'f8xakD1ne3h5aEb0sNxG', '500', '1'),
-('O1fLzAsoPFHMxWYkqzjo', 'T24PpTdsfjPjZ04Bz5hE', '6RGU6BEcYeqSzeqBOYwd', '15', '1');
+('nmsiKptVp0x10TBtHIfp', '4TYFZ35QpEmReJ2iZTx6', 'RP0mT1eFwp7BXrd9rXfn', '1', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `confirm_booking`
+--
+
+CREATE TABLE `confirm_booking` (
+  `id` varchar(20) NOT NULL,
+  `user_id` varchar(20) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `number` varchar(10) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `address` varchar(200) NOT NULL,
+  `address_type` varchar(10) NOT NULL,
+  `method` varchar(50) NOT NULL,
+  `pitch_id` varchar(20) NOT NULL,
+  `price` varchar(10) NOT NULL,
+  `qty` varchar(2) NOT NULL,
+  `date` date NOT NULL DEFAULT current_timestamp(),
+  `status` varchar(50) NOT NULL DEFAULT 'in progress'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `confirm_booking`
+--
+
+INSERT INTO `confirm_booking` (`id`, `user_id`, `name`, `number`, `email`, `address`, `address_type`, `method`, `pitch_id`, `price`, `qty`, `date`, `status`) VALUES
+('YprST4vKaQwbrswdA5FT', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', '12334', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'home', 'credit or debit card', 'SIayjt6XRWpaNcqhv2Cn', '70', '1', '2023-03-05', 'canceled'),
+('O5BBgjsYUT3PbmKy1gw9', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', '12334', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'home', 'credit or debit card', 'aa7jWBNhR9tNWdHU7Lq0', '50', '1', '2023-03-05', 'canceled'),
+('9vI7OPdwmGnLRq46sjbU', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', '12334', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'home', 'credit or debit card', 'f8xakD1ne3h5aEb0sNxG', '500', '1', '2023-03-05', 'in progress'),
+('oVYeoQX5SdCkctGqPR1C', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', '12334', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'home', 'credit or debit card', 'WL8uS1QcxYocxnv6fC17', '50', '1', '2023-03-05', 'in progress'),
+('jY2oqYY7jg1xVTswpGDv', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', '12334', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'home', 'credit or debit card', 'RP0mT1eFwp7BXrd9rXfn', '1', '1', '2023-03-05', 'in progress'),
+('mO2ZJeQduTa7qbwkpQ3c', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', '1111', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'home', 'cash on delivery', 'aa7jWBNhR9tNWdHU7Lq0', '50', '1', '2023-03-05', 'canceled');
 
 -- --------------------------------------------------------
 
@@ -206,7 +236,7 @@ CREATE TABLE `visitor_counter` (
 --
 
 INSERT INTO `visitor_counter` (`id`, `counter`) VALUES
-(1, 21669);
+(1, 21686);
 
 --
 -- Indexes for dumped tables
