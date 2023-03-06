@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2023 at 08:20 PM
+-- Generation Time: Mar 06, 2023 at 08:33 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -45,7 +45,11 @@ INSERT INTO `booking` (`id`, `user_id`, `pitch_id`, `price`, `qty`) VALUES
 ('9x7vkwcghPoBJwAjuAzg', 'ISUe5moEVn9iAQRQOACX', 'f8xakD1ne3h5aEb0sNxG', '500', '5'),
 ('Ri6HWTIvtAY62srbEpK2', '4TYFZ35QpEmReJ2iZTx6', 'aa7jWBNhR9tNWdHU7Lq0', '50', '30'),
 ('t7ZI9jNF3P4euchXr9PU', '4TYFZ35QpEmReJ2iZTx6', 'f8xakD1ne3h5aEb0sNxG', '500', '1'),
-('nmsiKptVp0x10TBtHIfp', '4TYFZ35QpEmReJ2iZTx6', 'RP0mT1eFwp7BXrd9rXfn', '1', '1');
+('nmsiKptVp0x10TBtHIfp', '4TYFZ35QpEmReJ2iZTx6', 'RP0mT1eFwp7BXrd9rXfn', '1', '1'),
+('YjHq3O9aHRUUNmR3hAT8', 'T24PpTdsfjPjZ04Bz5hE', 'RP0mT1eFwp7BXrd9rXfn', '1', '1'),
+('CVp402IhvXhNcE7zxL4F', 'T24PpTdsfjPjZ04Bz5hE', 'aa7jWBNhR9tNWdHU7Lq0', '50', '1'),
+('frcQCeQRG41KXrBf9eji', 'T24PpTdsfjPjZ04Bz5hE', 'f8xakD1ne3h5aEb0sNxG', '500', '1'),
+('rBicOn2fGIa3eRi0bPqh', 'T24PpTdsfjPjZ04Bz5hE', 'WL8uS1QcxYocxnv6fC17', '50', '1');
 
 -- --------------------------------------------------------
 
@@ -99,9 +103,6 @@ CREATE TABLE `pitch` (
 --
 
 INSERT INTO `pitch` (`id`, `name`, `price`, `image`) VALUES
-('RP0mT1eFwp7BXrd9rXfn', 'test', '1', '3E12gSqkVz9HYdanyOrA.jpg'),
-('aa7jWBNhR9tNWdHU7Lq0', 'Tent pitch 1', '50', 'CvEurmazZcCrRsTCs0bE.jpg'),
-('f8xakD1ne3h5aEb0sNxG', 'test 3', '500', 'J1tWiJxv34CIkOosEhkv.png'),
 ('6RGU6BEcYeqSzeqBOYwd', 'Tent Pitch', '15', 'jRcmG6mqrIbpjp9LieD4.jpg'),
 ('WL8uS1QcxYocxnv6fC17', 'Caravan Pitch', '50', 'VVKr1aF5KKLdzIj5tk5c.jpg'),
 ('SIayjt6XRWpaNcqhv2Cn', 'Motorhome Pitch', '70', 'qDdMoOtSAvJkB9vqw6Ww.jpg');
@@ -114,7 +115,7 @@ INSERT INTO `pitch` (`id`, `name`, `price`, `image`) VALUES
 
 CREATE TABLE `posts` (
   `id` varchar(20) NOT NULL,
-  `title` varchar(50) NOT NULL,
+  `title` varchar(200) NOT NULL,
   `image` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -123,12 +124,12 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `image`) VALUES
-('h12FAnxY6JoXb51iDpda', '01 example post title', 'post_1.webp'),
-('sRKX0vSREJbBzO07wM1H', '02 example post title', 'post_2.webp'),
-('G6zDaxTTS0fV5UT4BQ46', '03 example post title', 'post_3.webp'),
-('6zQRsklaYIO38cLIgYZN', '04 example post title', 'post_4.webp'),
-('mMj2FWPRVWZPsfOsjSUL', '05 example post title', 'post_5.webp'),
-('hK2tgabAaK1c1FAak6UW', '06 example post title', 'post_6.webp');
+('h12FAnxY6JoXb51iDpda', 'Wild swimming kit, gifts, equipment and accessories', 'post_1.webp'),
+('sRKX0vSREJbBzO07wM1H', 'River and Water Quality for wild swimming', 'post_2.webp'),
+('G6zDaxTTS0fV5UT4BQ46', 'Wild Swimming access, legal and law – am I allowed to wild swim in rivers and lakes?', 'post_3.webp'),
+('6zQRsklaYIO38cLIgYZN', 'Best Wild Swims in Wales', 'post_4.webp'),
+('mMj2FWPRVWZPsfOsjSUL', 'Wild Swimming introduction for beginners', 'post_5.webp'),
+('hK2tgabAaK1c1FAak6UW', 'Wild Swimming Near Waterfalls', 'post_6.webp');
 
 -- --------------------------------------------------------
 
@@ -236,7 +237,7 @@ CREATE TABLE `visitor_counter` (
 --
 
 INSERT INTO `visitor_counter` (`id`, `counter`) VALUES
-(1, 21686);
+(1, 21730);
 
 --
 -- Indexes for dumped tables

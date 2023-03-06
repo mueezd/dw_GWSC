@@ -5,7 +5,7 @@ if (isset($_GET['get_id'])) {
     $get_id = $_GET['get_id'];
 } else {
     $get_id = '';
-    header('location:all_posts.php');
+    header('location:review.php');
 }
 
 if (isset($_POST['delete_review'])) {
@@ -60,7 +60,7 @@ if (isset($_POST['delete_review'])) {
     <!-- view posts section starts  -->
     <section class="view-post">
         <div class="heading">
-            <h1>post details</h1> <a href="all_posts.php" class="inline-option-btn" style="margin-top: 0;">all posts</a>
+            <h1>post details</h1> <a href="review.php" class="inline-option-btn" style="margin-top: 0;">all posts</a>
         </div>
 
         <?php

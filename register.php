@@ -77,22 +77,25 @@ if (isset($_POST['submit'])) {
     <!-- header section starts  -->
     <?php include 'components/header.php'; ?>
     <!-- header section ends -->
-    <section class="form-container">
-        <form action="" method="post" enctype="multipart/form-data">
-            <h3>make your account!</h3>
-            <p class="placeholder">your name <span>*</span></p>
-            <input type="text" name="name" required maxlength="50" placeholder="enter your name" class="box">
-            <p class="placeholder">your email <span>*</span></p>
-            <input type="email" name="email" required maxlength="50" placeholder="enter your email" class="box">
-            <p class="placeholder">your password <span>*</span></p>
-            <input type="password" name="pass" required maxlength="50" placeholder="enter your password" class="box">
-            <p class="placeholder">confirm password <span>*</span></p>
-            <input type="password" name="c_pass" required maxlength="50" placeholder="confirm your password" class="box">
-            <p class="placeholder">profile pic</p>
-            <input type="file" name="image" class="box" accept="image/*">
-            <p class="link">already have an account? <a href="login.php">login now</a></p>
-            <input type="submit" value="register now" name="submit" class="form-btn">
-        </form>
+    <section class="register form">
+        <div class="form-container">
+            <form action="" method="post" enctype="multipart/form-data">
+                <h3>make your account!</h3>
+                <p class="placeholder">your name <span>*</span></p>
+                <input type="text" name="name" required maxlength="50" placeholder="enter your name" class="box">
+                <p class="placeholder">your email <span>*</span></p>
+                <input type="email" name="email" required maxlength="50" placeholder="enter your email" class="box">
+                <p class="placeholder">your password <span>*</span></p>
+                <input type="password" name="pass" required maxlength="50" placeholder="enter your password" class="box">
+                <p class="placeholder">confirm password <span>*</span></p>
+                <input type="password" name="c_pass" required maxlength="50" placeholder="confirm your password" class="box">
+                <p class="placeholder">profile pic</p>
+                <input type="file" name="image" class="box" accept="image/*">
+                <p class="link">already have an account? <a href="login.php">login now</a></p>
+                <input type="submit" value="register now" name="submit" class="form-btn">
+            </form>
+        </div>
+
     </section>
 
     <!-- Footer section start -->

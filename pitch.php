@@ -71,38 +71,50 @@ if (isset($_POST['add_to_booking'])) {
     </section>
     <!-- demo search  -->
     <section>
-        <div class="box-container">
+        <div class="availability">
             <?php
-            if (isset($_POST['search_box']) or isset($_POST['search_btn'])) {
-                $search_box = $_POST['search_box'];
-                $select_pitch = $conn->prepare("SELECT * FROM `pitch` WHERE name LIKE '%{$search_box}%'");
-                $select_pitch->execute();
-                if ($select_pitch->rowCount() > 0) {
-                    while ($fetch_pitch = $select_pitch->fetch(PDO::FETCH_ASSOC)) {
+             if (isset($_POST['search_box']) or isset($_POST['search_btn'])) {
+                echo '<h1 class="heading">Search Result</h1>';
+             }
             ?>
-                        <form action="" method="post" class="box">
-                            <input type="hidden" name="pid" value="<?= $fetch_pitch['id']; ?>">
-                            <input type="hidden" name="name" value="<?= $fetch_pitch['name']; ?>">
-                            <input type="hidden" name="price" value="<?= $fetch_pitch['price']; ?>">
-                            <input type="hidden" name="image" value="<?= $fetch_pitch['image']; ?>">
-                            <a href="quick_view.php?pid=<?= $fetch_pitch['id']; ?>" class="fas fa-eye"></a>
-                            <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
-                            <img src="uploaded_files_pitch/<?= $fetch_pitch['image']; ?>" alt="">
-                            <!-- <a href="category.php?category=<?= $fetch_pitch['category']; ?>" class="cat"><?= $fetch_pitch['category']; ?></a> -->
-                            <div class="name"><?= $fetch_pitch['name']; ?></div>
-                            <div class="flex">
-                                <div class="price"><span>$</span><?= $fetch_pitch['price']; ?></div>
-                                <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
-                            </div>
-                        </form>
-            <?php
+            <div class="box-container">
+                <?php
+                if (isset($_POST['search_box']) or isset($_POST['search_btn'])) {
+                    $search_box = $_POST['search_box'];
+                    $select_pitch = $conn->prepare("SELECT * FROM `pitch` WHERE name LIKE '%{$search_box}%'");
+                    $select_pitch->execute();
+                    if ($select_pitch->rowCount() > 0) {
+                        while ($fetch_pitch = $select_pitch->fetch(PDO::FETCH_ASSOC)) {
+                ?>
+                            <form action="" method="POST" class="box">
+                                <img src="uploaded_files_pitch/<?= $fetch_pitch['image']; ?>" class="image">
+                                <a href="#" class="fas fa-heart"></a>
+                                <div class="contect">
+                                    <h3><?= $fetch_pitch['name'] ?></h3>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, dolores!</p>
+                                    <input type="hidden" name="pitch_id" value="<?= $fetch_pitch['id']; ?>">
+                                    <div class="flex-box">
+                                        <p class="price"><i class="fas fa-pound-sign"></i><?= $fetch_pitch['price'] ?></p>
+                                        <input type="number" name="qty" required min="1" value="1" max="99" maxlength="2" class="qty">
+                                    </div>
+                                    <input type="submit" name="add_to_booking" value="add to Book" class="btn">
+                                </div>
+                            </form>
+                <?php
+                        }
+                    } else {
+                        echo '<p class="empty">no pitch Found yet!</p>';
                     }
-                } else {
-                    echo '<p class="empty">no pitch added yet!</p>';
                 }
-            }
-            ?>
-
+                ?>
+            </div>
         </div>
     </section>
     <!-- search section end  -->
@@ -117,13 +129,13 @@ if (isset($_POST['add_to_booking'])) {
                 $select_pitch = $conn->prepare("SELECT * FROM `pitch`");
                 $select_pitch->execute();
                 if ($select_pitch->rowCount() > 0) {
-                    while ($fetch_prodcut = $select_pitch->fetch(PDO::FETCH_ASSOC)) {
+                    while ($fetch_pitch = $select_pitch->fetch(PDO::FETCH_ASSOC)) {
                 ?>
                         <form action="" method="POST" class="box">
-                            <img src="uploaded_files_pitch/<?= $fetch_prodcut['image']; ?>" class="image" alt="">
+                            <img src="uploaded_files_pitch/<?= $fetch_pitch['image']; ?>" class="image" alt="">
                             <a href="#" class="fas fa-heart"></a>
                             <div class="contect">
-                                <h3><?= $fetch_prodcut['name'] ?></h3>
+                                <h3><?= $fetch_pitch['name'] ?></h3>
                                 <div class="stars">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -132,9 +144,9 @@ if (isset($_POST['add_to_booking'])) {
                                     <i class="fas fa-star-half-alt"></i>
                                 </div>
                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, dolores!</p>
-                                <input type="hidden" name="pitch_id" value="<?= $fetch_prodcut['id']; ?>">
+                                <input type="hidden" name="pitch_id" value="<?= $fetch_pitch['id']; ?>">
                                 <div class="flex-box">
-                                    <p class="price"><i class="fas fa-pound-sign"></i><?= $fetch_prodcut['price'] ?></p>
+                                    <p class="price"><i class="fas fa-pound-sign"></i><?= $fetch_pitch['price'] ?></p>
                                     <input type="number" name="qty" required min="1" value="1" max="99" maxlength="2" class="qty">
                                 </div>
                                 <input type="submit" name="add_to_booking" value="add to Book" class="btn">

@@ -123,7 +123,7 @@ if (isset($_POST['place_confirm_booking'])) {
                             <input type="number" name="pin_code" required maxlength="6" placeholder="e.g. 123456" class="input" min="0" max="999999">
                         </div>
                     </div>
-                    <input type="submit" value="place confirm_booking" name="place_confirm_booking" class="btn">
+                    <input type="submit" value="confirm your booking" name="place_confirm_booking" class="btn">
                 </form>
 
                 <div class="summary">

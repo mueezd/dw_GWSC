@@ -582,7 +582,7 @@ section .p-search {
     position: relative;
     display: flex;
     justify-content: right;
-    padding-left: 4rem;
+    padding-left: 10rem;
 }
 
 section .p-search input {
@@ -949,12 +949,23 @@ section .booking-cart {
     color: var(--black);
 }
 
+.form-container form .placeholder {
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: left;
+}
+.form-container form .link{
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: left;
+}
+
 .form-container form input,
 .form-container form select {
     width: 100%;
     padding: 10px 15px;
     font-size: 17px;
-    margin: 8px 0;
+    margin: 6px 0;
     background: #eee;
     border-radius: 5px;
     text-transform: none;
@@ -1650,83 +1661,137 @@ section .local-atr {
         top: 20px;
         right: 90px;
         width: 25px;
+    }
+
+    section .p-search {
+        padding-left: 4rem;
+    }
+
+    .form-container form {
+        padding-top: 10rem;
+    }
+
+    .form-container form h3 {
+        font-size: 25px;
+    }
+
+    .form-container form .placeholder {
+        font-size: 1.5rem;  
+    }
+
+    .form-container form input,
+    .form-container form select {
+        margin: 4px 0;
+    }
+
+    .form-container form input:focus,
+    .form-container form select:focus {
+        border: .1rem solid var(--green);
+    }
+
+    .form-container form select option {
+        background: #fff;
+    }
+
+    .form-container form .form-btn {
+        background: var(--black);
+        color: #fff;
+        text-transform: capitalize;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .form-container form .form-btn:hover {
+        background: var(--green);
+    }
+
+    .form-container p {
+        margin-top: 10px;
+        font-size: 20px;
+        color: var(--black);
+    }
+
+    .form-container p a {
+        color: var(--green);
+    }
+
+}
+
+@media(max-width:991px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        height: 15vh;
+        padding: 1rem 2rem;
+    }
+
+    header .navbar a {
+        font-size: 1.2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    header .icons #menu-bar {
+        display: inline-block;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        border-bottom: .1rem solid rgba(0, 0, 0, .2);
+        padding: 1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navbar a {
+        display: block;
+        padding: 1rem;
+        margin: 1rem;
+        font-size: 1.8rem;
+        background: #eee;
 
     }
 
-    @media(max-width:991px) {
-
-        html {
-            font-size: 55%;
-        }
-
-        header {
-            height: 15vh;
-            padding: 1rem 2rem;
-        }
-
-        header .navbar a {
-            font-size: 1.2rem;
-        }
-
-        section {
-            padding: 2rem;
-        }
+    #search-form #search-box {
+        width: 90%;
+        margin: 0 1rem;
     }
 
-    @media(max-width:768px) {
-
-        header .icons #menu-bar {
-            display: inline-block;
-        }
-
-        header .navbar {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: #fff;
-            border-top: .1rem solid rgba(0, 0, 0, .2);
-            border-bottom: .1rem solid rgba(0, 0, 0, .2);
-            padding: 1rem;
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        }
-
-        header .navbar.active {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-        }
-
-        header .navbar a {
-            display: block;
-            padding: 1rem;
-            margin: 1rem;
-            font-size: 1.8rem;
-            background: #eee;
-
-        }
-
-        #search-form #search-box {
-            width: 90%;
-            margin: 0 1rem;
-        }
-
-        .home .home-slider .slide .content h3 {
-            font-size: 5rem;
-        }
-
+    .home .home-slider .slide .content h3 {
+        font-size: 5rem;
     }
 
-    @media(max-width:450px) {
+}
 
-        html {
-            font-size: 50%;
-        }
+@media(max-width:450px) {
 
-        .features .box-container .box img {
-            height: auto;
-            width: 100%;
-        }
-
-        .contact form .inputBox .input {
-            width: 100%;
-        }
+    html {
+        font-size: 50%;
     }
+
+    .features .box-container .box img {
+        height: auto;
+        width: 100%;
+    }
+
+    .contact form .inputBox .input {
+        width: 100%;
+    }
+}
