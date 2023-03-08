@@ -1,6 +1,28 @@
 <?php
 
 include 'components/config.php';
+if ($user_id != '') {
+
+    if (isset($_POST['submit'])) {
+        $id = create_unique_id();
+        $user_id = $_COOKIE['user_id'];
+        $name = $_POST['name'];
+        $name = filter_var($name, FILTER_SANITIZE_STRING);
+        $email = $_POST['email'];
+        $email = filter_var($email, FILTER_SANITIZE_STRING);
+        $phone = $_POST['phone'];
+        $phone = filter_var($phone, FILTER_SANITIZE_STRING);
+        $message = $_POST['message'];
+        $message = filter_var($message, FILTER_SANITIZE_STRING);
+
+        $insert_message = $conn->prepare("INSERT INTO `contact_messages`(id, user_id, name, email, phone, message) VALUES(?,?,?,?,?,?)");
+        $insert_message->execute([$id, $user_id, $name, $email, $phone, $message]);
+        $success_msg[] = 'Message submit successfully!';
+        // 
+    }
+} else {
+    $warning_msg[] = 'Please login first!';
+}
 
 ?>
 
@@ -33,49 +55,58 @@ include 'components/config.php';
     </form>
 
     <!-- Contact section start-->
-    <section id="contact">
-        <div class="contact">
+    <section>
+        <div class="contact-page-section">
             <h3 class="sub-heading">Contact</h3>
             <h1 class="heading">Why choose us</h1>
-            <form action="">
-                <div class="inputBox">
-                    <div class="input">
-                        <span>Your Name:</span>
-                        <input type="text" placeholder="enter your name" name="" id="">
-                    </div>
-                    <div class="input">
-                        <span>Your Name:</span>
-                        <input type="number" placeholder="enter your number" name="" id="">
+            <div class="contact-page">
+                <div class="contact-page-left">
+                    <img src="images/oontactpage.webp" alt="">
+                </div>
+                <div class="contact-page-right">
+                    <div class="contact">
+                        <form action="" method="post">
+                            <div class="inputBox">
+                                <div class="input">
+                                    <span>Your Name:</span>
+                                    <input type="text" placeholder="enter your name" name="name" id="" required>
+                                </div>
+                                <div class="input">
+                                    <span>Your Email</span>
+                                    <input type="email" placeholder="enter your email" name="email" id="" required>
+                                </div>
+                                <div class="input">
+                                    <span>Your Phone</span>
+                                    <input type="text" placeholder="enter your phone number" name="phone" id="" required>
+                                </div>
+                                <div class="input">
+                                    <span>Your Messgae:</span>
+                                    <textarea name="message" id="" cols="30" rows="10" placeholder="Write Your Messgae" required></textarea>
+                                </div>
+                                <div class="input">
+                                    <a href="privacy_policy.php">Read : Privacy policy</a>
+                                </div>
+                                <input type="submit" value="Submit" name="submit" class="btn">
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div class="inputBox">
-                    <div class="input">
-                        <span>Your Order:</span>
-                        <input type="text" placeholder="enter your order" name="" id="">
-                    </div>
-                    <div class="input">
-                        <span>Your Address:</span>
-                        <input type="text" placeholder="enter our address" name="" id="">
-                    </div>
-                </div>
-                <div class="inputBox">
-                    <div class="input">
-                        <span>Your Queary:</span>
-                        <textarea name="" placeholder="Write your Queary" id="" cols="30" rows="10">
-                    </textarea>
-                    </div>
-                    <div class="input">
-                        <span>Your Message:</span>
-                        <textarea name="" placeholder="Write your Message" id="" cols="30" rows="10">
-                    </textarea>
-                    </div>
-                </div>
-                <input type="submit" value="Contact Now" class="btn">
-            </form>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="contact-box">
+            <h1>Contact Info</h1>
+            <div class="contact-box-info">
+                <a href="#"><i class="fas fa-phone"></i><span>+123-456-7890</span></a>
+                <a href="#"><i class="fas fa-phone"></i><span>+111-222-7890</span></a>
+                <a href="#"><i class="fas fa-envelope"></i><span>info@gwsc.org</span></a>
+                <a href="#"><i class="fas fa-address-card"></i><span>Park Street London, United kingdom</span></a>
+            </div>
         </div>
     </section>
     <!-- Contact section End-->
-
     <!-- Footer section start -->
     <?php include 'components/footer.php'; ?>
     <!-- Footer section start -->

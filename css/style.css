@@ -782,12 +782,25 @@ section .searchButton:focus {
     color: var(--light-color);
 }
 
-section .contact {
+section .contact-page-section {
     padding-top: 10rem;
 }
 
+.contact-page {
+    display: flex;
+    /* text-align: center; */
+    justify-content: center;
+    gap: 3rem;
+}
+
+.contact-page-section .contact-page .contact-page-left img {
+    width: 390px;
+    border-radius: 1.5rem;
+    box-shadow: var(--box-shadow);
+}
+
 .contact form {
-    max-width: 90rem;
+    width: 600px;
     border-radius: .5rem;
     box-shadow: var(--box-shadow);
     border: .1rem solid rgba(0, 0, 0, .2);
@@ -797,13 +810,17 @@ section .contact {
 }
 
 .contact form .inputBox {
-    display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .contact form .inputBox .input {
-    width: 49%;
+    /* width: 49%; */
+}
+
+.contact form .inputBox a {
+    font-size: 1.5rem;
+    color: green;
+    font-weight: bold;
 }
 
 .contact form .inputBox .input span {
@@ -835,6 +852,40 @@ section .contact {
     resize: none;
 }
 
+.contact-box {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    border: 0.1rem solid var(--gray-color);
+}
+
+.contact-box h1 {
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.contact-box .contact-box-info {
+    padding-top: 2rem;
+}
+
+.contact-box .contact-box-info a i {
+    text-decoration: none;
+    color: var(--green);
+    gap: 1rem;
+}
+
+.contact-box .contact-box-info a span {
+    padding-right: 5rem;
+    color: var(--black);
+}
+
+
+.contact-box-info {
+    font-size: 1.8rem;
+    /* gap: 1rem; */
+}
+
 section .booking-cart {
     padding-top: 11rem;
 }
@@ -845,7 +896,7 @@ section .booking-cart {
 
 .footer .box-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 1.5rem;
 }
 
@@ -954,7 +1005,8 @@ section .booking-cart {
     font-weight: bold;
     text-align: left;
 }
-.form-container form .link{
+
+.form-container form .link {
     font-size: 1.7rem;
     font-weight: bold;
     text-align: left;
@@ -1279,8 +1331,8 @@ header .profile .image {
 }
 
 .locationmaps .map-box iframe {
-    width: 1100px;
-    height: 500px;
+    width: 100%;
+    height: 400px;
     border-radius: 20px;
 }
 
@@ -1647,7 +1699,48 @@ section .local-atr {
     padding-top: 10rem;
 }
 
-/* Account from  */
+.local-container {
+    width: 100%;
+    display: flex;
+    padding: 0.1rem;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.local-container .local-con-internal{
+    flex: 1;
+    background: var(--white);
+    padding: 2rem;
+    font-size: 1.5rem;
+    gap: 1.5rem;
+    border: .1rem solid var(--gray-color);
+    border-radius: 0.5rem;
+}
+
+
+.local-container .local-con-internal h1{
+    padding-bottom: 1.5rem;
+}
+.local-container .local-con-internal img{
+    width: 100%;
+    height: 50%;
+    border-radius: 1rem;
+}
+
+/* Captcha */
+
+.captcha-form {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.captcha-form img {
+    padding-top: 2rem;
+}
+
 
 
 /* media queries */
@@ -1676,7 +1769,7 @@ section .local-atr {
     }
 
     .form-container form .placeholder {
-        font-size: 1.5rem;  
+        font-size: 1.5rem;
     }
 
     .form-container form input,
@@ -1724,7 +1817,6 @@ section .local-atr {
     }
 
     header {
-        height: 15vh;
         padding: 1rem 2rem;
     }
 
@@ -1778,6 +1870,10 @@ section .local-atr {
         font-size: 5rem;
     }
 
+    .local-container {
+        flex-direction: column;
+    }
+
 }
 
 @media(max-width:450px) {
@@ -1793,5 +1889,9 @@ section .local-atr {
 
     .contact form .inputBox .input {
         width: 100%;
+    }
+
+    .locationmaps .map-box iframe {
+        height: 300px;
     }
 }

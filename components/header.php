@@ -5,7 +5,6 @@
             <a href="index.php">home</a>
             <a href="information.php">information</a>
             <a href="pitch.php">pitch type & availability</a>
-            <!-- <a href="availability.php">availability</a> -->
             <a href="review.php">reviews</a>
             <a href="feature.php">features</a>
             <a href="contact.php">contact</a>

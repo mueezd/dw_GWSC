@@ -1,9 +1,10 @@
 <?php
 
+session_start();
+
 include 'components/config.php';
 
 if (isset($_POST['submit'])) {
-
     $id = create_unique_id();
     $name = $_POST['name'];
     $name = filter_var($name, FILTER_SANITIZE_STRING);
@@ -38,16 +39,20 @@ if (isset($_POST['submit'])) {
     if ($verify_email->rowCount() > 0) {
         $warning_msg[] = 'Email already taken!';
     } else {
-        if ($c_pass == 1) {
-            $insert_user = $conn->prepare("INSERT INTO `users`(id, name, email, password, image) VALUES(?,?,?,?,?)");
-            $insert_user->execute([$id, $name, $email, $pass, $rename]);
-            $success_msg[] = 'Registered successfully!';
-        } else {
-            $warning_msg[] = 'Confirm password not matched!';
+        if($_POST["captcha_code"] == $_SESSION["captcha_code"]){
+            if ($c_pass == 1) {
+                $insert_user = $conn->prepare("INSERT INTO `users`(id, name, email, password, image) VALUES(?,?,?,?,?)");
+                $insert_user->execute([$id, $name, $email, $pass, $rename]);
+                $success_msg[] = 'Registered successfully!';
+            } else {
+                $warning_msg[] = 'Confirm password not matched!';
+            }
+        }
+        else{
+            $warning_msg[] = 'Captcha Code Invalid';
         }
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -91,17 +96,18 @@ if (isset($_POST['submit'])) {
                 <input type="password" name="c_pass" required maxlength="50" placeholder="confirm your password" class="box">
                 <p class="placeholder">profile pic</p>
                 <input type="file" name="image" class="box" accept="image/*">
+                <div class="captcha-form">
+                    <img src="components/captcha_gen.php" alt="">
+                    <input type="text" name="captcha_code" required maxlength="50" placeholder="enter the captcha code" class="box">
+                </div>
                 <p class="link">already have an account? <a href="login.php">login now</a></p>
                 <input type="submit" value="register now" name="submit" class="form-btn">
             </form>
         </div>
-
     </section>
-
     <!-- Footer section start -->
     <?php include 'components/footer.php' ?>
     <!-- Footer section end -->
-
 
     <!-- Swipper JS CND -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
@@ -109,7 +115,6 @@ if (isset($_POST['submit'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- custom js file link -->
     <script src="js/script.js"></script>
-
 
     <?php include 'components/alerts.php'; ?>
 </body>

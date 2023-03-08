@@ -28,6 +28,38 @@ include 'components/config.php';
         <div class="local-atr">
             <h3 class="sub-heading">Explore your campaign</h3>
             <h1 class="heading">Local Attractions</h1>
+            <div class="local-container">
+                <div class="local-con-internal">
+                    <h1>Wild Lake</h1>
+                    <img src="images/local-1.jpg" alt="">
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, numquam veritatis?
+                        Quaerat aspernatur saepe vitae ab in eum fugiat molestiae! Dolores error quidem
+                        reprehenderit excepturi modi. Consequuntur quaerat iste dolores?
+                    </p>
+                </div>
+                <div class="local-con-internal">
+                    <h1>fountain lake</h1>
+                    <img src="images/local-2.jpg" alt="">
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex totam saepe quaerat
+                        corrupti ratione, illo deleniti! Aut molestiae recusandae nulla laborum,
+                        accusantium dicta. Autem harum non repellendus iure praesentium modi?
+                    </p>
+
+                </div>
+
+
+                <div class="local-con-internal">
+                    <h1>Stone Lake</h1>
+                    <img src="images/local-3.jpg" alt="">
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex totam saepe quaerat
+                        corrupti ratione, illo deleniti! Aut molestiae recusandae nulla laborum,
+                        accusantium dicta. Autem harum non repellendus iure praesentium modi?
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
     <!-- local attrection section end -->

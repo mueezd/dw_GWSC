@@ -34,6 +34,10 @@
                 <a href="#">instagram</a>
                 <a href="#">youtube</a>
             </div>
+            <div class="box">
+                <h3>Services</h3>
+                <a href="#">RSS Feed</a>
+            </div>
         </div>
         <div class="credit">copyright @ 2023 by <span>deepro__</span></div>
     </section>

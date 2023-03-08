@@ -169,6 +169,7 @@ $visitor_counter_add->execute();
         </div>
     </section>
     <!-- Features section End -->
+
     <!-- location maps section start -->
     <section class="locationmaps">
         <h3 class="sub-heading">Camping Locations</h3>
@@ -213,6 +214,17 @@ $visitor_counter_add->execute();
         </div>
     </section>
     <!-- information section Ends -->
+
+    <!-- Wild Swiming kit section using RSS Start -->
+    <section>
+        <h3 class="sub-heading">choose your kit</h3>
+        <h1 class="heading">Wild Swiming kit Zone</h1>
+        <div>
+            <rssapp-wall id="OHL7j4oDZ5oiuV6Z"></rssapp-wall>
+            <script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
+        </div>
+    </section>
+    <!-- Wild Swiming kit section using RSS Start -->
 
     <!-- availability section start  -->
     <section class="availability" id="availability">
@@ -337,13 +349,17 @@ $visitor_counter_add->execute();
     </section>
     <!-- availability section ends  -->
 
-    <!-- local attracton section start-->
-    <section class="locala" id="locala">
-        <h3 class="sub-heading">local attracton</h3>
-        <h1 class="heading">Why choose us</h1>
+    <!-- News And Updates using RSS feed section start  -->
+    <section>
+        <h3 class="sub-heading">Keep Updated</h3>
+        <h1 class="heading">News & Updates</h1>
+        <div>
+            <rssapp-wall id="UPGa40TkPUSE6o9i"></rssapp-wall>
+            <script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
+        </div>
     </section>
-    <!-- local attracton section End-->
-    
+    <!-- News And Updates using RSS feed section End  -->
+
     <!-- Footer section start -->
     <?php include 'components/footer.php'; ?>
     <!-- Footer section end -->
@@ -358,5 +374,4 @@ $visitor_counter_add->execute();
     <?php include 'components/alerts.php'; ?>
 
 </body>
-
 </html>
