@@ -107,7 +107,7 @@ if (isset($_POST['delete_review'])) {
         ?>
                 <div class="row">
                     <div class="col">
-                        <img src="user_uploaded_files/<?= $fetch_post['image']; ?>" alt="" class="image">
+                        <img src="uploaded_files_posts/<?= $fetch_post['image']; ?>" alt="" class="image">
                         <h3 class="title"><?= $fetch_post['title']; ?></h3>
                     </div>
                     <div class="col">

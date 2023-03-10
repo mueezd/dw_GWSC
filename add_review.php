@@ -30,6 +30,7 @@ if(isset($_POST['submit'])){
          $add_review = $conn->prepare("INSERT INTO `reviews`(id, post_id, user_id, rating, title, description) VALUES(?,?,?,?,?,?)");
          $add_review->execute([$id, $get_id, $user_id, $rating, $title, $description]);
          $success_msg[] = 'Review added!';
+         header("Refresh:1;url=view_review_post.php?get_id=$get_id");
       }
 
    }else{
@@ -56,13 +57,6 @@ if(isset($_POST['submit'])){
 </head>
 
 <body>
-    <!-- search form -->
-    <form action="" id="search-form">
-        <input type="search" placeholder="search here..." name="" id="search-box">
-        <label for="search-box" class="fas fa-search"></label>
-        <i class="fas fa-times" id="close"></i>
-    </form>
-
     <!-- header section starts  -->
     <?php include 'components/header.php'; ?>
     <!-- header section ends -->
@@ -83,7 +77,7 @@ if(isset($_POST['submit'])){
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-            <input type="submit" value="submit review" name="submit" class="btn">
+            <input type="submit" value="submit review" name="submit" class="form-btn">
             <a href="view_review_post.php?get_id=<?= $get_id; ?>" class="btn2">go back</a>
         </form>
     </section>

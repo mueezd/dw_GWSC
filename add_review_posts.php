@@ -11,12 +11,8 @@ if (isset($_COOKIE['user_id'])) {
 if (isset($_POST['add'])) {
 
     $id = create_unique_id();
-    $name = $_POST['name'];
-    $name = filter_var($name, FILTER_SANITIZE_STRING);
-    $description = $_POST['description'];
-    $description = filter_var($description, FILTER_SANITIZE_STRING);
-    $price = $_POST['price'];
-    $price = filter_var($price, FILTER_SANITIZE_STRING);
+    $title = $_POST['title'];
+    $title = filter_var($title, FILTER_SANITIZE_STRING);
 
     $image = $_FILES['image']['name'];
     $image = filter_var($image, FILTER_SANITIZE_STRING);
@@ -24,15 +20,15 @@ if (isset($_POST['add'])) {
     $rename = create_unique_id() . '.' . $ext;
     $image_tmp_name = $_FILES['image']['tmp_name'];
     $image_size = $_FILES['image']['size'];
-    $image_folder = 'uploaded_files_pitch/' . $rename;
+    $image_folder = 'uploaded_files_posts/' . $rename;
 
     if ($image_size > 2000000) {
         $warning_msg[] = 'Image size is too large!';
     } else {
-        $add_pitch = $conn->prepare("INSERT INTO `pitch`(id, name, description, price, image) VALUES(?,?,?,?,?)");
-        $add_pitch->execute([$id, $name, $description, $price, $rename]);
+        $add_pitch = $conn->prepare("INSERT INTO `posts`(id, title, image) VALUES(?,?,?)");
+        $add_pitch->execute([$id, $title, $rename]);
         move_uploaded_file($image_tmp_name, $image_folder);
-        $success_msg[] = 'Picth added!';
+        $success_msg[] = 'Tipic added!';
     }
 }
 
@@ -64,23 +60,16 @@ if (isset($_POST['add'])) {
     <section>
         <div class="form-container">
             <form action="" method="POST" enctype="multipart/form-data">
-                <h3>add pitch info</h3>
-                <p class="placeholder">pitch name <span>*</span></p>
-                <input type="text" name="name" placeholder="enter pitch name" required maxlength="50" class="box">
-                <p class="placeholder">pitch description<span>*</span></p>
-                <textarea name="description" placeholder="enter pitch description" required maxlength="500" class="box" cols="30" rows="10"></textarea>
-                <p class="placeholder">pitch price <span>*</span></p>
-                <input type="number" name="price" placeholder="enter pitch price" required min="0" max="9999999999" maxlength="10" class="box">
+                <h3>review topic</h3>
+                <p class="placeholder">Post Topic Title <span>*</span></p>
+                <input type="text" name="title" placeholder="enter pitch name" required maxlength="50" class="box">
                 <p class="placeholder">pitch image <span>*</span></p>
                 <input type="file" name="image" required accept="image/*" class="box">
-                <input type="submit" class="form-btn" name="add" value="add pitch">
+                <input type="submit" class="form-btn" name="add" value="add review topic">
             </form>
         </div>
     </section>
     <!-- add picth type section End  -->
-
-
-
 
 
     <!-- Footer section start -->

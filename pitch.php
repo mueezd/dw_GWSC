@@ -28,9 +28,9 @@ if (isset($_POST['add_to_booking'])) {
         $warning_msg[] = 'Cart is full!';
     } else {
 
-        $select_price = $conn->prepare("SELECT * FROM `pitch` WHERE id = ? LIMIT 1");
-        $select_price->execute([$pitch_id]);
-        $fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
+        $select_pitch = $conn->prepare("SELECT * FROM `pitch` WHERE id = ? LIMIT 1");
+        $select_pitch->execute([$pitch_id]);
+        $fetch_pitch = $select_pitch->fetch(PDO::FETCH_ASSOC);
 
         $insert_booking = $conn->prepare("INSERT INTO `booking`(id, user_id, pitch_id, price, qty) VALUES(?,?,?,?,?)");
         $insert_booking->execute([$id, $user_id, $pitch_id, $fetch_price['price'], $qty]);
@@ -98,7 +98,7 @@ if (isset($_POST['add_to_booking'])) {
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star-half-alt"></i>
                                     </div>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, dolores!</p>
+                                    <p><?= $fetch_pitch['description'] ?></p>
                                     <input type="hidden" name="pitch_id" value="<?= $fetch_pitch['id']; ?>">
                                     <div class="flex-box">
                                         <p class="price"><i class="fas fa-pound-sign"></i><?= $fetch_pitch['price'] ?></p>
@@ -143,7 +143,7 @@ if (isset($_POST['add_to_booking'])) {
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star-half-alt"></i>
                                 </div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, dolores!</p>
+                                <p><?= $fetch_pitch['description'] ?></p>
                                 <input type="hidden" name="pitch_id" value="<?= $fetch_pitch['id']; ?>">
                                 <div class="flex-box">
                                     <p class="price"><i class="fas fa-pound-sign"></i><?= $fetch_pitch['price'] ?></p>

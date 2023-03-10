@@ -1,7 +1,6 @@
 <?php
 @include 'components/config.php';
-// @include 'components/count.php';
-// count_visitor();
+
 $visitor_counter_add = $conn->prepare("UPDATE visitor_counter SET counter = counter+1 WHERE id = 1;");
 $visitor_counter_add->execute();
 ?>

@@ -1,6 +1,9 @@
 <?php
-
+session_start();
 include 'components/config.php';
+if (!isset($_SESSION['attempt'])) {
+    $_SESSION['attempt'] = 0;
+}
 
 if (isset($_POST['submit'])) {
 
@@ -18,9 +21,17 @@ if (isset($_POST['submit'])) {
         $verfiy_pass = password_verify($pass, $fetch['password']);
         if ($verfiy_pass == 1) {
             setcookie('user_id', $fetch['id'], time() + 60 * 60 * 24 * 30, '/');
-            header('location:review.php');
+            header('location:index.php');
+            session_destroy();
         } else {
             $warning_msg[] = 'Incorrect password!';
+
+            $_SESSION['attempt'] += 1;
+
+            if ($_SESSION['attempt'] === 3) {
+                $error_msg[] = 'account locked for 10 minutes!';
+                header("Refresh:600;url=components/reset.php");
+            }
         }
     } else {
         $warning_msg[] = 'Incorrect email!';
@@ -57,12 +68,19 @@ if (isset($_POST['submit'])) {
         <div class="form-container">
             <form action="" method="post" enctype="multipart/form-data">
                 <h3>welcome</h3>
+
                 <p class="placeholder">your email <span>*</span></p>
-                <input type="email" name="email" required maxlength="50" placeholder="enter your email" class="box">
+                <input type="email" name="email" required maxlength="50" placeholder="enter your email" class="box" <?php if ($_SESSION['attempt'] === 3) {
+                                                                                                                        echo 'disabled';
+                                                                                                                    } ?>>
                 <p class="placeholder">your password <span>*</span></p>
-                <input type="password" name="pass" required maxlength="50" placeholder="enter your password" class="box">
+                <input type="password" name="pass" required maxlength="50" placeholder="enter your password" class="box" <?php if ($_SESSION['attempt'] === 3) {
+                                                                                                                                echo 'disabled';
+                                                                                                                            } ?>>
                 <p class="link">don't have an account? <a href="register.php">register now</a></p>
-                <input type="submit" value="login now" name="submit" class="form-btn">
+                <input type="submit" <?php if ($_SESSION['attempt'] === 3) {echo 'value="Account locked! - try after 10 minutes"';}else{echo 'value="login now"';} ?>  name="submit" class="form-btn" <?php if ($_SESSION['attempt'] === 3) {
+                                                                                            echo 'disabled';
+                                                                                        } ?>>
             </form>
         </div>
     </section>

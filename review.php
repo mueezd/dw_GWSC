@@ -43,7 +43,7 @@ include 'components/config.php';
                         $total_reviews = $count_reviews->rowCount();
                 ?>
                         <div class="box">
-                            <img src="user_uploaded_files/<?= $fetch_post['image']; ?>" alt="" class="image">
+                            <img src="uploaded_files_posts/<?= $fetch_post['image']; ?>" alt="" class="image">
                             <h3 class="title"><?= $fetch_post['title']; ?></h3>
                             <p class="total-reviews"><i class="fas fa-star"></i> <span><?= $total_reviews; ?></span></p>
                             <a href="view_review_post.php?get_id=<?= $post_id; ?>" class="btn">view post</a>

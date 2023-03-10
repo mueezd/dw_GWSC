@@ -9,7 +9,13 @@
             <a href="feature.php">features</a>
             <a href="contact.php">contact</a>
             <a href="localattractions.php">local attractions</a>
-            <a class="active" href="login.php">Login</a>
+            <?php
+            if ($user_id == '') {
+                echo '<a class="active" href="login.php">Login</a>';
+            }
+            ?>
+
+
         </nav>
 
         <div class="icons">
@@ -41,8 +47,15 @@
                         <img src="user_uploaded_files/<?= $fetch_profile['image']; ?>" alt="" class="image">
                     <?php }; ?>
                     <p><?= $fetch_profile['name']; ?></p>
-                    <a href="update.php" class="form-btn">update profile</a>
-                    <a href="components/logout.php" class="delete-btn" onclick="return confirm('logout from this website?');">logout</a>
+                    <a href="update_profile.php" class="form-btn">update profile</a>
+                    <?php
+                    if ($user_id == 'EUmQeGo4BaVW00oUr9aV') {
+                        echo '<a class="form-btn" href="add_pitch_type.php">Add Pitch</a>';
+                        echo '<a class="form-btn" href="add_review_posts.php">add review topic</a>';
+                    }
+                    ?>
+
+                    <a href="components/logout.php" class="danger-btn">logout</a>
                 <?php } else { ?>
                     <div class="flex-btn">
                         <p>please login or register!</p>

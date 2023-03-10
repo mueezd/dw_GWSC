@@ -56,6 +56,7 @@ section:nth-child(even) {
     text-transform: uppercase;
 }
 
+/* Buttons CSS section  */
 .btn {
     margin-top: 1rem;
     display: inline-block;
@@ -98,11 +99,30 @@ section:nth-child(even) {
     border-radius: .5rem;
     cursor: pointer;
     padding: .8rem 3rem;
+    width: 100%;
 }
 
 .form-btn:hover {
     background: var(--orange);
 }
+
+.danger-btn {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--red);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+    width: 100%;
+}
+
+.danger-btn:hover {
+    background: var(--light-color);
+}
+
+
 
 /* others button */
 
@@ -1023,8 +1043,24 @@ section .booking-cart {
     text-transform: none;
 }
 
+.form-container form textarea {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 17px;
+    margin: 6px 0;
+    background: #eee;
+    border-radius: 5px;
+    text-transform: none;
+}
+
+.form-container form img {
+    width: 50%;
+    border-radius: 12rem;
+}
+
 .form-container form input:focus,
-.form-container form select:focus {
+.form-container form select:focus,
+.form-container form textarea:focus {
     border: .1rem solid var(--green);
 }
 
@@ -1042,6 +1078,18 @@ section .booking-cart {
 
 .form-container form .form-btn:hover {
     background: var(--green);
+}
+
+.form-container form .delete-btn {
+    background: var(--red);
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.form-container form .delete-btn:hover {
+    background: var(--orange);
 }
 
 .form-container p {
@@ -1709,7 +1757,7 @@ section .local-atr {
     gap: 1rem;
 }
 
-.local-container .local-con-internal{
+.local-container .local-con-internal {
     flex: 1;
     background: var(--white);
     padding: 2rem;
@@ -1720,10 +1768,11 @@ section .local-atr {
 }
 
 
-.local-container .local-con-internal h1{
+.local-container .local-con-internal h1 {
     padding-bottom: 1.5rem;
 }
-.local-container .local-con-internal img{
+
+.local-container .local-con-internal img {
     width: 100%;
     height: 50%;
     border-radius: 1rem;
