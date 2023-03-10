@@ -363,7 +363,6 @@ $visitor_counter_add->execute();
     <?php include 'components/footer.php'; ?>
     <!-- Footer section end -->
 
-
     <!-- Swipper JS CND -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <!-- sweetalart cdn link  -->

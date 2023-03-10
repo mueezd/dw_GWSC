@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2023 at 08:33 PM
+-- Generation Time: Mar 10, 2023 at 09:05 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -45,11 +45,7 @@ INSERT INTO `booking` (`id`, `user_id`, `pitch_id`, `price`, `qty`) VALUES
 ('9x7vkwcghPoBJwAjuAzg', 'ISUe5moEVn9iAQRQOACX', 'f8xakD1ne3h5aEb0sNxG', '500', '5'),
 ('Ri6HWTIvtAY62srbEpK2', '4TYFZ35QpEmReJ2iZTx6', 'aa7jWBNhR9tNWdHU7Lq0', '50', '30'),
 ('t7ZI9jNF3P4euchXr9PU', '4TYFZ35QpEmReJ2iZTx6', 'f8xakD1ne3h5aEb0sNxG', '500', '1'),
-('nmsiKptVp0x10TBtHIfp', '4TYFZ35QpEmReJ2iZTx6', 'RP0mT1eFwp7BXrd9rXfn', '1', '1'),
-('YjHq3O9aHRUUNmR3hAT8', 'T24PpTdsfjPjZ04Bz5hE', 'RP0mT1eFwp7BXrd9rXfn', '1', '1'),
-('CVp402IhvXhNcE7zxL4F', 'T24PpTdsfjPjZ04Bz5hE', 'aa7jWBNhR9tNWdHU7Lq0', '50', '1'),
-('frcQCeQRG41KXrBf9eji', 'T24PpTdsfjPjZ04Bz5hE', 'f8xakD1ne3h5aEb0sNxG', '500', '1'),
-('rBicOn2fGIa3eRi0bPqh', 'T24PpTdsfjPjZ04Bz5hE', 'WL8uS1QcxYocxnv6fC17', '50', '1');
+('nmsiKptVp0x10TBtHIfp', '4TYFZ35QpEmReJ2iZTx6', 'RP0mT1eFwp7BXrd9rXfn', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -83,7 +79,41 @@ INSERT INTO `confirm_booking` (`id`, `user_id`, `name`, `number`, `email`, `addr
 ('9vI7OPdwmGnLRq46sjbU', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', '12334', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'home', 'credit or debit card', 'f8xakD1ne3h5aEb0sNxG', '500', '1', '2023-03-05', 'in progress'),
 ('oVYeoQX5SdCkctGqPR1C', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', '12334', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'home', 'credit or debit card', 'WL8uS1QcxYocxnv6fC17', '50', '1', '2023-03-05', 'in progress'),
 ('jY2oqYY7jg1xVTswpGDv', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', '12334', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'home', 'credit or debit card', 'RP0mT1eFwp7BXrd9rXfn', '1', '1', '2023-03-05', 'in progress'),
-('mO2ZJeQduTa7qbwkpQ3c', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', '1111', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'home', 'cash on delivery', 'aa7jWBNhR9tNWdHU7Lq0', '50', '1', '2023-03-05', 'canceled');
+('mO2ZJeQduTa7qbwkpQ3c', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', '1111', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'home', 'cash on delivery', 'aa7jWBNhR9tNWdHU7Lq0', '50', '1', '2023-03-05', 'canceled'),
+('t9aoFnO1CKEmAsuIng9T', '5LpfpBm7Pun0sNKqiJs0', 'MUEEZ RAHMAN DEEPRO', '43292', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'office', 'cash on delivery', '6RGU6BEcYeqSzeqBOYwd', '15', '1', '2023-03-11', 'canceled'),
+('aWI4F4uvybZ2jHZ5rz7c', '5LpfpBm7Pun0sNKqiJs0', 'MUEEZ RAHMAN DEEPRO', '43292', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'office', 'cash on delivery', 'WL8uS1QcxYocxnv6fC17', '50', '1', '2023-03-11', 'in progress');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_messages`
+--
+
+CREATE TABLE `contact_messages` (
+  `id` varchar(20) NOT NULL,
+  `user_id` varchar(20) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `message` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contact_messages`
+--
+
+INSERT INTO `contact_messages` (`id`, `user_id`, `name`, `email`, `phone`, `message`) VALUES
+('9ypXtC0VtaC56m920yGm', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', 'mueezrz@gmail.com', '3e23', '23r2r3'),
+('Vt50284ioQozE4kXAbbD', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', 'mueezrz@gmail.com', 'test2', 'test 1'),
+('s9hNRXHU25rGNRqbOCvg', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', 'mueezrz@gmail.com', 'test2', 'test 1'),
+('SHWXZZBJbP9UkTw1ChE5', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', 'mueezrz@gmail.com', 'test2', 'test 1'),
+('W7HXAaf282MPT7Z1BIyw', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', 'mueezrz@gmail.com', 'test2', 'test 1'),
+('4BBGvsFnhfDNaiE2dnGV', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', 'mueezrz@gmail.com', 'test2', 'test 1'),
+('BdQBpa6SMzA1zz5h2uIr', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', 'mueezrz@gmail.com', 'test2', 'test 1'),
+('ptwfGET4DhRrKuimRgu7', 'T24PpTdsfjPjZ04Bz5hE', 'Fahim', 'fahim@vgf.com', '01721111', 'test'),
+('tsXrQBJyIzBQZ782Bwe0', 'T24PpTdsfjPjZ04Bz5hE', 'Fahim', 'fahim@vgf.com', '01721111', 'test'),
+('SHazPNtn1daNbJLcZBjQ', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', 'mueezrz@gmail.com', 'fw4', '3443f'),
+('dvh3QfVBDKefgDPg5rvU', '4TYFZ35QpEmReJ2iZTx6', 'wfwef', 'weff@zdger', '01717922924', 'Test');
 
 -- --------------------------------------------------------
 
@@ -94,6 +124,7 @@ INSERT INTO `confirm_booking` (`id`, `user_id`, `name`, `number`, `email`, `addr
 CREATE TABLE `pitch` (
   `id` varchar(20) NOT NULL,
   `name` varchar(50) NOT NULL,
+  `description` varchar(500) NOT NULL,
   `price` varchar(10) NOT NULL,
   `image` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -102,10 +133,11 @@ CREATE TABLE `pitch` (
 -- Dumping data for table `pitch`
 --
 
-INSERT INTO `pitch` (`id`, `name`, `price`, `image`) VALUES
-('6RGU6BEcYeqSzeqBOYwd', 'Tent Pitch', '15', 'jRcmG6mqrIbpjp9LieD4.jpg'),
-('WL8uS1QcxYocxnv6fC17', 'Caravan Pitch', '50', 'VVKr1aF5KKLdzIj5tk5c.jpg'),
-('SIayjt6XRWpaNcqhv2Cn', 'Motorhome Pitch', '70', 'qDdMoOtSAvJkB9vqw6Ww.jpg');
+INSERT INTO `pitch` (`id`, `name`, `description`, `price`, `image`) VALUES
+('6RGU6BEcYeqSzeqBOYwd', 'Tent Pitch', 'A campsite, also known as a campground or camping pitch, is a place used for overnight stay in an outdoor area.', '15', 'jRcmG6mqrIbpjp9LieD4.jpg'),
+('WL8uS1QcxYocxnv6fC17', 'Caravan Pitch', 'Seasonal touring pitches allow you to enjoy all the benefits of your caravan while cutting down on the amount of towing you have to do.', '50', 'VVKr1aF5KKLdzIj5tk5c.jpg'),
+('SIayjt6XRWpaNcqhv2Cn', 'Motorhome Pitch', 'Full-service pitches have electricity, freshwater, and greywater. RV mains water hookup or Aquaroll mains water adapter kit/float valve are needed. Fully maintained pitches may need drain adaptors.', '70', 'qDdMoOtSAvJkB9vqw6Ww.jpg'),
+('EiCTM8XB7iCScKWCzcxY', 'Pup Tents', 'to require booking and pitch extras. Pup tents can only be 2 x 1.5m and can only be used by two children aged 9–15. They must be set up inside the pitch of the original unit.', '4', 'V4ntsIN69ERZL4oIU0vx.gif');
 
 -- --------------------------------------------------------
 
@@ -129,7 +161,9 @@ INSERT INTO `posts` (`id`, `title`, `image`) VALUES
 ('G6zDaxTTS0fV5UT4BQ46', 'Wild Swimming access, legal and law – am I allowed to wild swim in rivers and lakes?', 'post_3.webp'),
 ('6zQRsklaYIO38cLIgYZN', 'Best Wild Swims in Wales', 'post_4.webp'),
 ('mMj2FWPRVWZPsfOsjSUL', 'Wild Swimming introduction for beginners', 'post_5.webp'),
-('hK2tgabAaK1c1FAak6UW', 'Wild Swimming Near Waterfalls', 'post_6.webp');
+('hK2tgabAaK1c1FAak6UW', 'Wild Swimming Near Waterfalls', 'post_6.webp'),
+('vuk4oiIGgb8HwvVTzauT', 'Best wild swims in Scotland', 'K7eTiId9rSxEqiXnMjRY.jpg'),
+('Dfc9s2rkZFyCJFKBBMjO', 'Best Wild Swimming Adventures in the Yorkshire Dal', 'h1sJ7qs2ghEcHI25TS3z.jpg');
 
 -- --------------------------------------------------------
 
@@ -154,7 +188,13 @@ CREATE TABLE `reviews` (
 INSERT INTO `reviews` (`id`, `post_id`, `user_id`, `rating`, `title`, `description`, `date`) VALUES
 ('FvZRcn2r91dnqqLcSmpP', 'G6zDaxTTS0fV5UT4BQ46', '0hSrVDBFhdbx5HbVFcKo', '2', 'deepro test 1', 'Test 1', '2023-03-03'),
 ('CEryRwPaDbdEST3KasXe', 'hK2tgabAaK1c1FAak6UW', '0hSrVDBFhdbx5HbVFcKo', '3', 'Manzi test 1', 'Test 1', '2023-03-03'),
-('x4ytybfvPxQLQKBDWHmk', 'sRKX0vSREJbBzO07wM1H', '4TYFZ35QpEmReJ2iZTx6', '2', 'Hello', '', '2023-03-04');
+('x4ytybfvPxQLQKBDWHmk', 'sRKX0vSREJbBzO07wM1H', '4TYFZ35QpEmReJ2iZTx6', '2', 'Hello', '', '2023-03-04'),
+('HmY3s3BaSsiK46jOYZPE', 'Dfc9s2rkZFyCJFKBBMjO', 'EUmQeGo4BaVW00oUr9aV', '1', 'Very good place', 'it is very good plane for swimming', '2023-03-10'),
+('9GaktpTtJsJSXNfKY32o', 'Dfc9s2rkZFyCJFKBBMjO', 'T24PpTdsfjPjZ04Bz5hE', '5', 'Nice', 'Wow, Exciting ', '2023-03-10'),
+('q8Kb9qxvMvkJmBeC4m9Q', 'sRKX0vSREJbBzO07wM1H', 'T24PpTdsfjPjZ04Bz5hE', '5', 'Very Nice', 'Very Nice', '2023-03-10'),
+('ActKShXJ2d1zsKB6GbC0', 'mMj2FWPRVWZPsfOsjSUL', 'T24PpTdsfjPjZ04Bz5hE', '1', 'Hello', 'This is very good place', '2023-03-10'),
+('kVgmceA3a0vxiPu1OJjL', 'h12FAnxY6JoXb51iDpda', 'T24PpTdsfjPjZ04Bz5hE', '4', 'Nice Topic', 'Hello', '2023-03-10'),
+('KakOzMgLUYJniNEmV99H', 'vuk4oiIGgb8HwvVTzauT', 'T24PpTdsfjPjZ04Bz5hE', '3', 'Wow', 'Nice', '2023-03-10');
 
 -- --------------------------------------------------------
 
@@ -181,7 +221,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `image`) VALUES
 ('4TYFZ35QpEmReJ2iZTx6', 'deepro@123', 'deepro@123', '$2y$10$HHWZ6GjUm20XYd2x9yD3IeO2Bj8ZO.GSXZMHR/l7rUir6HXw4Sy/S', 'SYBSTtoCcgNnJnocKjmj.jpg'),
 ('2jBJRInhQ2F3aaHyHmyp', 'samrin', 'samrin@gmail.com', '$2y$10$5NDsRf3PAWA.3Ym9Nyp1e.BnD.Bm97AWKzAWGvEm72mRfhBF3PW1O', 'OuWeFnn25DFQfauIJcfV.jpg'),
 ('kienFDuMX0EqqH4hCOYX', 'mona@123', 'mona@123', '$2y$10$Kk8kLhFMBCYQRG5LI7WST.aQn6W78nWOdlFY1vyX0y0Mtns0YERvi', ''),
-('T24PpTdsfjPjZ04Bz5hE', 'robin@123', 'robin@123', '$2y$10$Nc/.DECz2EES4J2MOoYqxeG7QCCUtli.audnZ0uFGL0rxBR4c7pj6', 'fhfArMCobI4nzXxdst56.jpg');
+('T24PpTdsfjPjZ04Bz5hE', 'robin@123', 'robin@123', '$2y$10$Nc/.DECz2EES4J2MOoYqxeG7QCCUtli.audnZ0uFGL0rxBR4c7pj6', 'xwMrm9aIC6LuKjH7uxRF.jpg'),
+('c4B0RbxNfdjDJGJvJe42', 'samrin', 'samrin@123', '$2y$10$C3KG2aqc3.oW6gIYyUbqr.BAc0jzf0Ud12pUUAKZKz7fq/v4x5jGy', ''),
+('Zry5h3OVXi6RdzYwos3B', 'man123', 'mann@123', '$2y$10$qmBVIvbP/59LeCmeXKrKn.COQQnqmroaMCkDyN8o8317MmhTU1pgG', ''),
+('mS0VYx0fJKVYsZqJqzpY', 'lucky@123', 'lucky@123', '$2y$10$BrUkUOkyTPBEIsVKwKMIgO9jPmsdGegVIaU0LnZvPBXUZMje5kB4S', ''),
+('1vAipNOB2TXUc3kRKRnC', 'tutul', 'tutul@123', '$2y$10$mMIzwHWze19tPf2FbytGiOX9FXA5r9yuFeiX02XPq1pUwrH0mRfVy', ''),
+('EUmQeGo4BaVW00oUr9aV', 'admin', 'admin@123', '$2y$10$QJkKKXclDbfZ4QX1Thz6n.ZgpwYSjhnjaTlYACTsWv/.3BIg0jixK', 'AMduSuZM5U25mM1Akohh.jpg');
 
 -- --------------------------------------------------------
 
@@ -237,7 +282,7 @@ CREATE TABLE `visitor_counter` (
 --
 
 INSERT INTO `visitor_counter` (`id`, `counter`) VALUES
-(1, 21730);
+(1, 22183);
 
 --
 -- Indexes for dumped tables

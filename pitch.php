@@ -28,9 +28,9 @@ if (isset($_POST['add_to_booking'])) {
         $warning_msg[] = 'Cart is full!';
     } else {
 
-        $select_pitch = $conn->prepare("SELECT * FROM `pitch` WHERE id = ? LIMIT 1");
-        $select_pitch->execute([$pitch_id]);
-        $fetch_pitch = $select_pitch->fetch(PDO::FETCH_ASSOC);
+        $select_price = $conn->prepare("SELECT * FROM `pitch` WHERE id = ? LIMIT 1");
+        $select_price->execute([$pitch_id]);
+        $fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
 
         $insert_booking = $conn->prepare("INSERT INTO `booking`(id, user_id, pitch_id, price, qty) VALUES(?,?,?,?,?)");
         $insert_booking->execute([$id, $user_id, $pitch_id, $fetch_price['price'], $qty]);
@@ -101,7 +101,7 @@ if (isset($_POST['add_to_booking'])) {
                                     <p><?= $fetch_pitch['description'] ?></p>
                                     <input type="hidden" name="pitch_id" value="<?= $fetch_pitch['id']; ?>">
                                     <div class="flex-box">
-                                        <p class="price"><i class="fas fa-pound-sign"></i><?= $fetch_pitch['price'] ?></p>
+                                        <p class="price"><i class="fas fa-pound-sign"></i><?= $fetch_price['price'] ?></p>
                                         <input type="number" name="qty" required min="1" value="1" max="99" maxlength="2" class="qty">
                                     </div>
                                     <input type="submit" name="add_to_booking" value="add to Book" class="btn">

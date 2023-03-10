@@ -33,30 +33,32 @@ include 'components/config.php';
                     <h1>Wild Lake</h1>
                     <img src="images/local-1.jpg" alt="">
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, numquam veritatis?
-                        Quaerat aspernatur saepe vitae ab in eum fugiat molestiae! Dolores error quidem
-                        reprehenderit excepturi modi. Consequuntur quaerat iste dolores?
+                        Wild lakes offer a unique experience for swimming and camping enthusiasts. These natural bodies of water are often tucked away in remote locations, surrounded by lush forests and breathtaking landscapes. They provide a tranquil and serene atmosphere, perfect for those seeking to escape the hustle and bustle of city life.
+                        Swimming in a wild lake offers a refreshing break from the heat of summer. The cool, clear water is perfect for a leisurely swim or a quick dip to cool off. Camping by a wild lake provides an opportunity to disconnect from technology and reconnect with nature. Many campgrounds offer a variety of amenities such as fire pits, picnic tables, and hiking trails.
                     </p>
                 </div>
                 <div class="local-con-internal">
                     <h1>fountain lake</h1>
                     <img src="images/local-2.jpg" alt="">
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex totam saepe quaerat
-                        corrupti ratione, illo deleniti! Aut molestiae recusandae nulla laborum,
-                        accusantium dicta. Autem harum non repellendus iure praesentium modi?
+                        Fountain Lakes is a popular destination for swimming and camping. The two lakes
+                        offer crystal-clear waters perfect for swimming and fishing, while the surrounding
+                        park offers hiking trails, picnic areas, and playgrounds. The campsite is equipped
+                        with electricity and water hookups, as well as modern restroom facilities. Overall,
+                        Fountain Lakes is an ideal spot for a relaxing outdoor getaway.
                     </p>
-
                 </div>
-
-
                 <div class="local-con-internal">
                     <h1>Stone Lake</h1>
                     <img src="images/local-3.jpg" alt="">
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex totam saepe quaerat
-                        corrupti ratione, illo deleniti! Aut molestiae recusandae nulla laborum,
-                        accusantium dicta. Autem harum non repellendus iure praesentium modi?
+                        Soca River, located in Slovenia, is a popular destination for swimming and 
+                        camping. The river is renowned for its clear turquoise waters, 
+                        which are perfect for swimming, kayaking, and rafting. The surrounding forests
+                         and mountains offer ample opportunities for hiking and cycling. 
+                         Campsites are available along the river, with facilities such as showers 
+                         and toilets. Soca River is a must-visit destination for nature lovers and 
+                         adventure seekers.
                     </p>
                 </div>
             </div>

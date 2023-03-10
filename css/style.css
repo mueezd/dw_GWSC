@@ -1385,7 +1385,6 @@ header .profile .image {
 }
 
 /* booking cart  */
-.booking-cart .box-container {}
 
 .booking-cart .box-container form.box {
     padding: 1rem;
@@ -1394,8 +1393,6 @@ header .profile .image {
     border-radius: 1rem;
     align-items: center;
     justify-content: space-between;
-    /* display: table-row; */
-    /* grid-template-rows: repeat(auto-fit, 35rem); */
 }
 
 
@@ -1410,6 +1407,17 @@ header .profile .image {
 
 .booking-cart .box-container h3.name {
     font-size: 1.8rem;
+}
+
+.booking-cart p {
+    font-size: 3rem;
+    color: green;
+    text-align: right;
+}
+
+.booking-cart .cart-total-btn-sec {
+    display: flex;
+    justify-content: space-between;
 }
 
 .booking-cart .box-container p.sub-total,
@@ -1765,6 +1773,7 @@ section .local-atr {
     gap: 1.5rem;
     border: .1rem solid var(--gray-color);
     border-radius: 0.5rem;
+    height: 55rem;
 }
 
 
