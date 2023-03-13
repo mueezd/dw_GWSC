@@ -1,6 +1,6 @@
     <!-- header section start -->
     <header>
-        <a href="#" class="logo"><img src="images/logo.png" alt=""></a>
+        <a href="index.php" class="logo"><img src="images/logo.png" alt=""></a>
         <nav class="navbar">
             <a href="index.php">home</a>
             <a href="information.php">information</a>
@@ -14,7 +14,6 @@
                 echo '<a class="active" href="login.php">Login</a>';
             }
             ?>
-
 
         </nav>
 

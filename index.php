@@ -17,7 +17,7 @@ $visitor_counter_add->execute();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <!-- fontawsam cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Customer CSS fie link -->
+    <!-- External Custom CSS fie link -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -372,4 +372,5 @@ $visitor_counter_add->execute();
     <?php include 'components/alerts.php'; ?>
 
 </body>
+
 </html>

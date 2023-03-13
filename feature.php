@@ -138,7 +138,23 @@ include 'components/config.php';
         </div>
     </section>
     <!-- Features section End -->
-
+    <!-- wearable technology categories section start -->
+    <section>
+        <div id="sidebar" class="neumorphic">
+            <ul class="menu">
+                <li>FORM Swim Goggles</li>
+                <li>Apple Watch Series 8</li>
+                <li>FINIS Smart Swim Goggles</li>
+                <li>FitBit Inspire 3</li>
+                <li>XMetrics Pro Swim Tracker</li>
+            </ul>
+            <div id="toggle" class="neumorphic">
+                <h1>wearable technology categories</h1>
+                <!-- <span></span> -->
+            </div>
+        </div>
+    </section>
+    <!-- wearable technology categories section ends -->
     <!-- Footer section start -->
     <?php include 'components/footer.php'; ?>
     <!-- Footer section end -->

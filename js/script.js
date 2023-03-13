@@ -14,16 +14,16 @@ window.onscroll = () => {
   menu.classList.remove('fa-times');
   navbar.classList.remove('active');
 
-  section.forEach(sec =>{
+  section.forEach(sec => {
     let top = window.scrollY;
     let height = sec.offsetHeight;
     let offset = sec.offsetTop - 150;
     let id = sec.getAttribute('id');
 
-    if(top => offset && top < offset + height){
+    if (top => offset && top < offset + height) {
       navLinks.forEach(links => {
         links.classList.remove('active');
-        document.querySelector('header .navbar a[href*='+id+']').classList.add('active');
+        document.querySelector('header .navbar a[href*=' + id + ']').classList.add('active');
       });
     };
 
@@ -83,19 +83,29 @@ var swiper = new Swiper(".review-slider", {
 
 let profile = document.querySelector('header .profile');
 
-document.querySelector('#user-btn').onclick = () =>{
-   profile.classList.toggle('active');
+document.querySelector('#user-btn').onclick = () => {
+  profile.classList.toggle('active');
 }
 
-window.onscroll = () =>{
-   profile.classList.remove('active');
+window.onscroll = () => {
+  profile.classList.remove('active');
 }
 
 document.querySelectorAll('input[type="number"]').forEach(inputNumber => {
-   inputNumber.oninput = () =>{
-      if(inputNumber.value.length > inputNumber.maxLength) inputNumber.value = inputNumber.value.slice(0, inputNumber.maxLength);
-   };
+  inputNumber.oninput = () => {
+    if (inputNumber.value.length > inputNumber.maxLength) inputNumber.value = inputNumber.value.slice(0, inputNumber.maxLength);
+  };
 });
+
+// //Side Panel
+
+// const toggleButton = document.getElementById('toggle');
+// const sidebar = document.getElementById('sidebar');
+
+// toggleButton.addEventListener('click', function () {
+//   sidebar.classList.toggle('hide');
+//   toggleButton.classList.toggle('hide');
+// });
 
 
 

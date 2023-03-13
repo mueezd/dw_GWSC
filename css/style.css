@@ -874,7 +874,7 @@ section .contact-page-section {
 
 .contact-box {
     text-align: center;
-    padding: 2rem;
+    padding-top: 2rem;
     border-radius: 0.5rem;
     box-shadow: var(--box-shadow);
     border: 0.1rem solid var(--gray-color);
@@ -886,7 +886,9 @@ section .contact-page-section {
 }
 
 .contact-box .contact-box-info {
-    padding-top: 2rem;
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
 }
 
 .contact-box .contact-box-info a i {
@@ -896,7 +898,7 @@ section .contact-page-section {
 }
 
 .contact-box .contact-box-info a span {
-    padding-right: 5rem;
+    /* padding-right: 5rem; */
     color: var(--black);
 }
 
@@ -1799,7 +1801,74 @@ section .local-atr {
     padding-top: 2rem;
 }
 
+/* Side Section  */
 
+/* Sidebar */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+#sidebar.hide {
+    transform: translateX(-250px);
+}
+
+/* Sidebar Menu */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.menu li:hover {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+/* Toggle Button */
+#toggle {
+    position: absolute;
+    top: 250px;
+    right: -150px;
+    width: 250px;
+    height: 50px;
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: 1rem;
+    cursor: pointer;
+    z-index: 9999;
+    transform: rotate(90deg);
+    padding: 1rem;
+    text-align: center;
+}
+
+#toggle.hide span:first-child {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#toggle.hide span:last-child {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#toggle.hide span:nth-child(2) {
+    transform: translate(-50%, -50%) scale(0);
+}
 
 /* media queries */
 @media(max-width:1400px) {
@@ -1945,11 +2014,25 @@ section .local-atr {
         width: 100%;
     }
 
-    .contact form .inputBox .input {
+    .contact form{
         width: 100%;
     }
 
+    .contact-page {
+        flex-direction: column;
+    }
+
+    .contact-box .contact-box-info{
+        flex-direction: column;
+    }
+
+
     .locationmaps .map-box iframe {
         height: 300px;
+    }
+
+    header .icons a span {
+
+        right: 10px;
     }
 }

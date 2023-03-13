@@ -84,13 +84,13 @@ if (isset($_POST['add_to_booking'])) {
                     $select_pitch = $conn->prepare("SELECT * FROM `pitch` WHERE name LIKE '%{$search_box}%'");
                     $select_pitch->execute();
                     if ($select_pitch->rowCount() > 0) {
-                        while ($fetch_pitch = $select_pitch->fetch(PDO::FETCH_ASSOC)) {
+                        while ($fetch_price = $select_pitch->fetch(PDO::FETCH_ASSOC)) {
                 ?>
                             <form action="" method="POST" class="box">
-                                <img src="uploaded_files_pitch/<?= $fetch_pitch['image']; ?>" class="image">
+                                <img src="uploaded_files_pitch/<?= $fetch_price['image']; ?>" class="image">
                                 <a href="#" class="fas fa-heart"></a>
                                 <div class="contect">
-                                    <h3><?= $fetch_pitch['name'] ?></h3>
+                                    <h3><?= $fetch_price['name'] ?></h3>
                                     <div class="stars">
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
@@ -98,7 +98,7 @@ if (isset($_POST['add_to_booking'])) {
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star-half-alt"></i>
                                     </div>
-                                    <p><?= $fetch_pitch['description'] ?></p>
+                                    <p><?= $fetch_price['description'] ?></p>
                                     <input type="hidden" name="pitch_id" value="<?= $fetch_pitch['id']; ?>">
                                     <div class="flex-box">
                                         <p class="price"><i class="fas fa-pound-sign"></i><?= $fetch_price['price'] ?></p>
