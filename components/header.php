@@ -14,9 +14,7 @@
                 echo '<a class="active" href="login.php">Login</a>';
             }
             ?>
-
         </nav>
-
         <div class="icons">
             <i class="fas fa-bars" id="menu-bar"></i>
             <i class="fas fa-search" id="search-icons"></i>

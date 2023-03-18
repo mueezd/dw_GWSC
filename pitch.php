@@ -99,7 +99,7 @@ if (isset($_POST['add_to_booking'])) {
                                         <i class="fas fa-star-half-alt"></i>
                                     </div>
                                     <p><?= $fetch_price['description'] ?></p>
-                                    <input type="hidden" name="pitch_id" value="<?= $fetch_pitch['id']; ?>">
+                                    <input type="hidden" name="pitch_id" value="<?= $fetch_price['id']; ?>">
                                     <div class="flex-box">
                                         <p class="price"><i class="fas fa-pound-sign"></i><?= $fetch_price['price'] ?></p>
                                         <input type="number" name="qty" required min="1" value="1" max="99" maxlength="2" class="qty">

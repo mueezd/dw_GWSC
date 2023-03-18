@@ -139,7 +139,7 @@ include 'components/config.php';
     </section>
     <!-- Features section End -->
     <!-- wearable technology categories section start -->
-    <section>
+    <aside>
         <div id="sidebar" class="neumorphic">
             <ul class="menu">
                 <li>FORM Swim Goggles</li>
@@ -150,10 +150,9 @@ include 'components/config.php';
             </ul>
             <div id="toggle" class="neumorphic">
                 <h1>wearable technology categories</h1>
-                <!-- <span></span> -->
             </div>
         </div>
-    </section>
+    </aside>
     <!-- wearable technology categories section ends -->
     <!-- Footer section start -->
     <?php include 'components/footer.php'; ?>

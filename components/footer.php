@@ -1,5 +1,5 @@
 <!-- Footer section start -->
-<section class="footer">
+<footer class="footer">
         <div class="box-container">
             <div class="box">
                 <h3>locations</h3>
@@ -40,5 +40,5 @@
             </div>
         </div>
         <div class="credit">copyright @ 2023 by <span>deepro__</span></div>
-    </section>
-    <!-- Footer section end -->
+</footer>
+<!-- Footer section end -->

@@ -38,7 +38,7 @@ $visitor_counter_add->execute();
                         <a href="register.php" class="btn">Register Now</a>
                     </div>
                     <div class="image">
-                        <img src="images/home-1.jpg" alt="">
+                        <img src="images/home-1.jpg" alt="Image of slide for register a new user">
                     </div>
                 </div>
                 <div class="swiper-slide slide">
@@ -372,5 +372,4 @@ $visitor_counter_add->execute();
     <?php include 'components/alerts.php'; ?>
 
 </body>
-
 </html>
