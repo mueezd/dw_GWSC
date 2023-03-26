@@ -236,129 +236,6 @@ $visitor_counter_add->execute();
     </section>
     <!-- Wild Swiming kit section using RSS Start -->
 
-    <!-- availability section start  -->
-    <section class="availability" id="availability">
-        <h3 class="sub-heading">availability</h3>
-        <h1 class="heading">Our Avaiity zone</h1>
-        <div class="box-container">
-            <div class="box">
-                <div class="image">
-                    <img src="images/a-1.webp" alt="">
-                    <a href="#" class="fas fa-heart"></a>
-                </div>
-                <div class="contect">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <h3>Mountain Location</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, dolores!</p>
-                    <a href="#" class="btn">Book Now</a>
-                    <span class="price">$12.99</span>
-                </div>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="images/a-1.webp" alt="">
-                    <a href="#" class="fas fa-heart"></a>
-                </div>
-                <div class="contect">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <h3>Mountain Location</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, dolores!</p>
-                    <a href="#" class="btn">Book Now</a>
-                    <span class="price">$12.99</span>
-                </div>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="images/a-1.webp" alt="">
-                    <a href="#" class="fas fa-heart"></a>
-                </div>
-                <div class="contect">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <h3>Mountain Location</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, dolores!</p>
-                    <a href="#" class="btn">Book Now</a>
-                    <span class="price">$12.99</span>
-                </div>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="images/a-1.webp" alt="">
-                    <a href="#" class="fas fa-heart"></a>
-                </div>
-                <div class="contect">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <h3>Mountain Location</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, dolores!</p>
-                    <a href="#" class="btn">Book Now</a>
-                    <span class="price">$12.99</span>
-                </div>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="images/a-1.webp" alt="">
-                    <a href="#" class="fas fa-heart"></a>
-                </div>
-                <div class="contect">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <h3>Mountain Location</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, dolores!</p>
-                    <a href="#" class="btn">Book Now</a>
-                    <span class="price">$12.99</span>
-                </div>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="images/a-1.webp" alt="">
-                    <a href="#" class="fas fa-heart"></a>
-                </div>
-                <div class="contect">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <h3>Mountain Location</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, dolores!</p>
-                    <a href="#" class="btn">Book Now</a>
-                    <span class="price">$12.99</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- availability section ends  -->
-
     <!-- News And Updates using RSS feed section start  -->
     <section>
         <h3 class="sub-heading">Keep Updated</h3>
@@ -372,7 +249,7 @@ $visitor_counter_add->execute();
     <!-- Chat section start -->
     <?php include 'components/chat.php'; ?>
     <!-- Chat section end -->
-    
+
     <!-- Footer section start -->
     <?php include 'components/footer.php'; ?>
     <!-- Footer section end -->
