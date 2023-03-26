@@ -1,5 +1,6 @@
 <?php
 include 'components/config.php';
+$title = "Local Attraction";
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +10,7 @@ include 'components/config.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome To Wild Swimming and Campining</title>
+    <title><?php echo $title; ?> | Global Wild Swimming and Campining</title>
     <!-- Swipper CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <!-- fontawsam cdn -->
@@ -19,6 +20,13 @@ include 'components/config.php';
 </head>
 
 <body>
+    <!-- search form start -->
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+    <!-- search form End -->
     <!-- header section starts  -->
     <?php include 'components/header.php'; ?>
     <!-- header section ends -->
@@ -52,19 +60,23 @@ include 'components/config.php';
                     <h1>Stone Lake</h1>
                     <img src="images/local-3.jpg" alt="">
                     <p>
-                        Soca River, located in Slovenia, is a popular destination for swimming and 
-                        camping. The river is renowned for its clear turquoise waters, 
+                        Soca River, located in Slovenia, is a popular destination for swimming and
+                        camping. The river is renowned for its clear turquoise waters,
                         which are perfect for swimming, kayaking, and rafting. The surrounding forests
-                         and mountains offer ample opportunities for hiking and cycling. 
-                         Campsites are available along the river, with facilities such as showers 
-                         and toilets. Soca River is a must-visit destination for nature lovers and 
-                         adventure seekers.
+                        and mountains offer ample opportunities for hiking and cycling.
+                        Campsites are available along the river, with facilities such as showers
+                        and toilets. Soca River is a must-visit destination for nature lovers and
+                        adventure seekers.
                     </p>
                 </div>
             </div>
         </div>
     </section>
     <!-- local attrection section end -->
+    
+    <!-- Chat section start -->
+    <?php include 'components/chat.php'; ?>
+    <!-- Chat section end -->
 
     <!-- Footer section start -->
     <?php include 'components/footer.php'; ?>

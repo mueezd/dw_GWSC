@@ -1,3 +1,5 @@
+
+
 let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.navbar');
 
@@ -97,17 +99,24 @@ document.querySelectorAll('input[type="number"]').forEach(inputNumber => {
   };
 });
 
+
+
 // //Side Panel
 
-// const toggleButton = document.getElementById('toggle');
-// const sidebar = document.getElementById('sidebar');
+const toggleButton = document.getElementById('toggle');
+const sidebar = document.getElementById('sidebar');
 
-// toggleButton.addEventListener('click', function () {
-//   sidebar.classList.toggle('hide');
-//   toggleButton.classList.toggle('hide');
-// });
+toggleButton.addEventListener('click', function () {
+  sidebar.classList.toggle('hide');
+  toggleButton.classList.toggle('hide');
+});
 
-
+// On Page Search Option 
+function searchText() {	
+		var search = $("#search-box").val();
+	        var res = $("#searchId").text().replace(search, "<strong>"+ search +"</strong>");
+                $("#searchId").html(res)
+    }
 
 
 

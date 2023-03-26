@@ -1,7 +1,7 @@
 <?php
 
 include 'components/config.php';
-
+$title = "Confirm Booking";
 if (isset($_COOKIE['user_id'])) {
     $user_id = $_COOKIE['user_id'];
 } else {
@@ -67,7 +67,7 @@ if (isset($_POST['place_confirm_booking'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome To Wild Swimming and Campining</title>
+    <title><?php echo $title; ?> | Global Wild Swimming and Campining</title>
     <!-- Swipper CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <!-- fontawsam cdn -->
@@ -77,6 +77,13 @@ if (isset($_POST['place_confirm_booking'])) {
 </head>
 
 <body>
+    <!-- search form start -->
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+    <!-- search form End -->
     <!-- header section start -->
     <?php include 'components/header.php'; ?>
     <!-- header section end -->
@@ -175,14 +182,15 @@ if (isset($_POST['place_confirm_booking'])) {
                         <p><i class="fas fa-pound-sign"></i> <?= $grand_total; ?></p>
                     </div>
                 </div>
-
             </div>
         </div>
 
     </section>
     <!-- confirm booking section End  -->
 
-
+    <!-- Chat section start -->
+    <?php include 'components/chat.php'; ?>
+    <!-- Chat section end -->
 
     <!-- Footer section start -->
     <?php include 'components/footer.php'; ?>

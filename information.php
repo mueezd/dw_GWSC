@@ -1,5 +1,6 @@
 <?php
 include 'components/config.php';
+$title = "Information";
 ?>
 
 
@@ -10,7 +11,7 @@ include 'components/config.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome To Wild Swimming and Campining</title>
+    <title><?php echo $title; ?> | Global Wild Swimming and Campining</title>
     <!-- Swipper CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <!-- fontawsam cdn -->
@@ -20,6 +21,12 @@ include 'components/config.php';
 </head>
 
 <body>
+    <!-- search form -->
+    <form action="" id="search-form">
+        <input type="text" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search" onclick="searchText()"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
     <!-- header section start -->
     <?php include 'components/header.php'; ?>
     <!-- header section end -->
@@ -35,7 +42,7 @@ include 'components/config.php';
                 </div>
                 <div class="content">
                     <h3>pitch types and availability</h3>
-                    <p>Pitch types for camping and caravanning include tent pitches, touring caravan pitches, and motorhome pitches. Tent pitches are ideal for those who prefer a more authentic outdoor experience, while touring caravan pitches offer more space and amenities. Motorhome pitches are designed to accommodate larger vehicles and often come with electrical hook-ups and waste disposal facilities. The availability of pitches varies depending on the location and season, so it's important to book in advance to secure your spot. It's also important to note that some campsites may have restrictions on the size and type of pitches available.</p>
+                    <p id="searchId">Pitch types for camping and caravanning include tent pitches, touring caravan pitches, and motorhome pitches. Tent pitches are ideal for those who prefer a more authentic outdoor experience, while touring caravan pitches offer more space and amenities. Motorhome pitches are designed to accommodate larger vehicles and often come with electrical hook-ups and waste disposal facilities. The availability of pitches varies depending on the location and season, so it's important to book in advance to secure your spot. It's also important to note that some campsites may have restrictions on the size and type of pitches available.</p>
                     <div class="icons-container">
                         <div class="icons">
                             <i class="fas fa-campground"></i>
@@ -144,6 +151,11 @@ include 'components/config.php';
         </div>
     </section>
     <!-- information section Ends -->
+
+    <!-- Chat section start -->
+    <?php include 'components/chat.php'; ?>
+    <!-- Chat section end -->
+    
     <!-- Footer section start -->
     <?php include 'components/footer.php'; ?>
     <!-- Footer section end -->

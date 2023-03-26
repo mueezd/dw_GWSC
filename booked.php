@@ -1,7 +1,7 @@
 <?php
 
 include 'components/config.php';
-
+$title = "Booked";
 if (isset($_COOKIE['user_id'])) {
     $user_id = $_COOKIE['user_id'];
 } else {
@@ -17,7 +17,7 @@ if (isset($_COOKIE['user_id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome To Wild Swimming and Campining</title>
+    <title><?php echo $title; ?> | Global Wild Swimming and Campining</title>
     <!-- Swipper CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <!-- fontawsam cdn -->
@@ -27,6 +27,13 @@ if (isset($_COOKIE['user_id'])) {
 </head>
 
 <body>
+    <!-- search form start -->
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+    <!-- search form End -->
     <!-- header section start -->
     <?php include 'components/header.php'; ?>
     <!-- header section end -->
@@ -63,6 +70,7 @@ if (isset($_COOKIE['user_id'])) {
                                                                             echo 'orange';
                                                                         }; ?>"><?= $fetch_order['status']; ?></p>
                                     </a>
+                                    <a href="" class="btn">Pay Now</a>
                                 </div>
                 <?php
                             }
@@ -82,7 +90,10 @@ if (isset($_COOKIE['user_id'])) {
     <!-- Footer section start -->
     <?php include 'components/footer.php'; ?>
     <!-- Footer section end -->
-
+    
+    <!-- Chat section start -->
+    <?php include 'components/chat.php'; ?>
+    <!-- Chat section end -->
 
     <!-- Swipper JS CND -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>

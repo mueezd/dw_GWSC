@@ -1,5 +1,6 @@
 <?php
 include 'components/config.php';
+$title = "Feature";
 ?>
 
 
@@ -11,7 +12,7 @@ include 'components/config.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome To Wild Swimming and Campining</title>
+    <title><?php echo $title; ?> | Global Wild Swimming and Campining</title>
     <!-- Swipper CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <!-- fontawsam cdn -->
@@ -21,6 +22,13 @@ include 'components/config.php';
 </head>
 
 <body>
+    <!-- search form start -->
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+    <!-- search form End -->
     <!-- header section start -->
     <?php include 'components/header.php'; ?>
     <!-- header section end -->
@@ -139,7 +147,7 @@ include 'components/config.php';
     </section>
     <!-- Features section End -->
     <!-- wearable technology categories section start -->
-    <section>
+    <aside>
         <div id="sidebar" class="neumorphic">
             <ul class="menu">
                 <li>FORM Swim Goggles</li>
@@ -150,11 +158,15 @@ include 'components/config.php';
             </ul>
             <div id="toggle" class="neumorphic">
                 <h1>wearable technology categories</h1>
-                <!-- <span></span> -->
             </div>
         </div>
-    </section>
+    </aside>
     <!-- wearable technology categories section ends -->
+
+    <!-- Chat section start -->
+    <?php include 'components/chat.php'; ?>
+    <!-- Chat section end -->
+    
     <!-- Footer section start -->
     <?php include 'components/footer.php'; ?>
     <!-- Footer section end -->

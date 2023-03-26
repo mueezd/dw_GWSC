@@ -1,12 +1,13 @@
 <?php
 
 include 'components/config.php';
-
+$title = "Pitch Type & Availability";
 if (isset($_COOKIE['user_id'])) {
     $user_id = $_COOKIE['user_id'];
-} else {
-    setcookie('user_id', create_unique_id(), time() + 60 * 60 * 24 * 30);
 }
+// } else {
+//     setcookie('user_id', create_unique_id(), time() + 60 * 60 * 24 * 30);
+// }
 
 if (isset($_POST['add_to_booking'])) {
 
@@ -40,7 +41,6 @@ if (isset($_POST['add_to_booking'])) {
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +48,7 @@ if (isset($_POST['add_to_booking'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome To Wild Swimming and Campining</title>
+    <title><?php echo $title; ?> | Global Wild Swimming and Campining</title>
     <!-- Swipper CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <!-- fontawsam cdn -->
@@ -58,6 +58,13 @@ if (isset($_POST['add_to_booking'])) {
 </head>
 
 <body>
+    <!-- search form start -->
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+    <!-- search form End -->
     <!-- header section start -->
     <?php include 'components/header.php'; ?>
     <!-- header section end -->
@@ -69,7 +76,7 @@ if (isset($_POST['add_to_booking'])) {
             <button type="submit" name="search_btn" class="fas fa-search searchButton"></button>
         </form>
     </section>
-    <!-- demo search  -->
+    <!-- Pitch search  -->
     <section>
         <div class="availability">
             <?php
@@ -99,7 +106,7 @@ if (isset($_POST['add_to_booking'])) {
                                         <i class="fas fa-star-half-alt"></i>
                                     </div>
                                     <p><?= $fetch_price['description'] ?></p>
-                                    <input type="hidden" name="pitch_id" value="<?= $fetch_pitch['id']; ?>">
+                                    <input type="hidden" name="pitch_id" value="<?= $fetch_price['id']; ?>">
                                     <div class="flex-box">
                                         <p class="price"><i class="fas fa-pound-sign"></i><?= $fetch_price['price'] ?></p>
                                         <input type="number" name="qty" required min="1" value="1" max="99" maxlength="2" class="qty">
@@ -163,6 +170,10 @@ if (isset($_POST['add_to_booking'])) {
     </section>
 
     <!-- pitch type section Ends -->
+
+    <!-- Chat section start -->
+    <?php include 'components/chat.php'; ?>
+    <!-- Chat section end -->
 
     <!-- Footer section start -->
     <?php include 'components/footer.php'; ?>

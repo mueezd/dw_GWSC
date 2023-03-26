@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2023 at 08:23 PM
+-- Generation Time: Mar 26, 2023 at 07:54 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -81,7 +81,9 @@ INSERT INTO `confirm_booking` (`id`, `user_id`, `name`, `number`, `email`, `addr
 ('jY2oqYY7jg1xVTswpGDv', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', '12334', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'home', 'credit or debit card', 'RP0mT1eFwp7BXrd9rXfn', '1', '1', '2023-03-05', 'in progress'),
 ('mO2ZJeQduTa7qbwkpQ3c', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', '1111', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'home', 'cash on delivery', 'aa7jWBNhR9tNWdHU7Lq0', '50', '1', '2023-03-05', 'canceled'),
 ('t9aoFnO1CKEmAsuIng9T', '5LpfpBm7Pun0sNKqiJs0', 'MUEEZ RAHMAN DEEPRO', '43292', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'office', 'cash on delivery', '6RGU6BEcYeqSzeqBOYwd', '15', '1', '2023-03-11', 'canceled'),
-('aWI4F4uvybZ2jHZ5rz7c', '5LpfpBm7Pun0sNKqiJs0', 'MUEEZ RAHMAN DEEPRO', '43292', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'office', 'cash on delivery', 'WL8uS1QcxYocxnv6fC17', '50', '1', '2023-03-11', 'in progress');
+('aWI4F4uvybZ2jHZ5rz7c', '5LpfpBm7Pun0sNKqiJs0', 'MUEEZ RAHMAN DEEPRO', '43292', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'office', 'cash on delivery', 'WL8uS1QcxYocxnv6fC17', '50', '1', '2023-03-11', 'in progress'),
+('I0L8kszI1U0BpUgsaGI2', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', '01717', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'home', 'cash on delivery', 'WL8uS1QcxYocxnv6fC17', '50', '1', '2023-03-26', 'in progress'),
+('ptO6PwSjNXbBePskI2e4', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', '01717', 'mueezrz@gmail.com', '&#34;Rahman Manzil&#34; East Khabaspur ,, Shantibag Mor , Sadar, Faridpur, Bangladesh - 7800', 'home', 'cash on delivery', 'SIayjt6XRWpaNcqhv2Cn', '70', '1', '2023-03-26', 'in progress');
 
 -- --------------------------------------------------------
 
@@ -113,7 +115,25 @@ INSERT INTO `contact_messages` (`id`, `user_id`, `name`, `email`, `phone`, `mess
 ('ptwfGET4DhRrKuimRgu7', 'T24PpTdsfjPjZ04Bz5hE', 'Fahim', 'fahim@vgf.com', '01721111', 'test'),
 ('tsXrQBJyIzBQZ782Bwe0', 'T24PpTdsfjPjZ04Bz5hE', 'Fahim', 'fahim@vgf.com', '01721111', 'test'),
 ('SHazPNtn1daNbJLcZBjQ', 'T24PpTdsfjPjZ04Bz5hE', 'MUEEZ RAHMAN DEEPRO', 'mueezrz@gmail.com', 'fw4', '3443f'),
-('dvh3QfVBDKefgDPg5rvU', '4TYFZ35QpEmReJ2iZTx6', 'wfwef', 'weff@zdger', '01717922924', 'Test');
+('dvh3QfVBDKefgDPg5rvU', '4TYFZ35QpEmReJ2iZTx6', 'wfwef', 'weff@zdger', '01717922924', 'Test'),
+('o3Paj7Qo2ZXnfpqL4uDU', 'unregistered user', 'MUEEZ RAHMAN DEEPRO', 'mueezrz@gmail.com', '01717922923', 'test'),
+('3nkfEKsGXqBMOPxRaVS1', 'T24PpTdsfjPjZ04Bz5hE', 'mr Deepro', 'deepro@deepro.com', '01717922923', 'logined'),
+('WznVmqpqjVWqPJ18uNYg', 'unregistered user', 'Mohammad Sazzat Hossain', 'mueez.net@gmail.com', '123', '123456780');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payments`
+--
+
+CREATE TABLE `payments` (
+  `payment_id` varchar(20) NOT NULL,
+  `item_number` varchar(50) NOT NULL,
+  `txn_id` varchar(50) NOT NULL,
+  `payment_gross` float(10,2) NOT NULL,
+  `currency_code` varchar(5) NOT NULL,
+  `payment_status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -164,6 +184,31 @@ INSERT INTO `posts` (`id`, `title`, `image`) VALUES
 ('hK2tgabAaK1c1FAak6UW', 'Wild Swimming Near Waterfalls', 'post_6.webp'),
 ('vuk4oiIGgb8HwvVTzauT', 'Best wild swims in Scotland', 'K7eTiId9rSxEqiXnMjRY.jpg'),
 ('Dfc9s2rkZFyCJFKBBMjO', 'Best Wild Swimming Adventures in the Yorkshire Dal', 'h1sJ7qs2ghEcHI25TS3z.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_enquiries`
+--
+
+CREATE TABLE `product_enquiries` (
+  `id` varchar(20) NOT NULL,
+  `product_name` varchar(100) NOT NULL,
+  `enquiries` varchar(500) NOT NULL,
+  `user_id` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `product_enquiries`
+--
+
+INSERT INTO `product_enquiries` (`id`, `product_name`, `enquiries`, `user_id`) VALUES
+('0', '', '', 'T24PpTdsfjPjZ04Bz5hE'),
+('BkMremd3isrxOHtB9x9u', '', '', 'T24PpTdsfjPjZ04Bz5hE'),
+('uPZuDNXSdDf1uqUU1An1', '', '', 'T24PpTdsfjPjZ04Bz5hE'),
+('5vQm1Loo5uQuahgy4f9j', '', '', 'T24PpTdsfjPjZ04Bz5hE'),
+('40qH8zhNJNmv2KOq1Ara', 'tent', 'tent', 'T24PpTdsfjPjZ04Bz5hE'),
+('bswzxmkXtRzIrRRa70H3', 'Caravan with microfiiber', 'Test enquiries ', 'T24PpTdsfjPjZ04Bz5hE');
 
 -- --------------------------------------------------------
 
@@ -282,11 +327,17 @@ CREATE TABLE `visitor_counter` (
 --
 
 INSERT INTO `visitor_counter` (`id`, `counter`) VALUES
-(1, 22456);
+(1, 22584);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `payments`
+--
+ALTER TABLE `payments`
+  ADD PRIMARY KEY (`payment_id`);
 
 --
 -- Indexes for table `user_form`

@@ -1,22 +1,28 @@
 <?php
-include 'components/config.php';
-$title = "Home Page";
-if (isset($_POST['submit'])) {
-    $id = create_unique_id();
-    $user_id = $_COOKIE['user_id'] ?? 'unregistered user';
-    $name = $_POST['name'];
-    $name = filter_var($name, FILTER_SANITIZE_STRING);
-    $email = $_POST['email'];
-    $email = filter_var($email, FILTER_SANITIZE_STRING);
-    $phone = $_POST['phone'];
-    $phone = filter_var($phone, FILTER_SANITIZE_STRING);
-    $message = $_POST['message'];
-    $message = filter_var($message, FILTER_SANITIZE_STRING);
 
-    $insert_message = $conn->prepare("INSERT INTO `contact_messages`(id, user_id, name, email, phone, message) VALUES(?,?,?,?,?,?)");
-    $insert_message->execute([$id, $user_id, $name, $email, $phone, $message]);
-    $success_msg[] = 'Message submit successfully!';
+include 'components/config.php';
+
+$title = "Product Enquiries";
+
+if ($user_id != '') {
+
+    if (isset($_POST['submit'])) {
+        $id = create_unique_id();
+        $product_name = $_POST['product_name'];
+        $product_name = filter_var($product_name, FILTER_SANITIZE_STRING);
+        $enquiries = $_POST['enquiries'];
+        $enquiries = filter_var($enquiries, FILTER_SANITIZE_STRING);
+        $user_id = $_COOKIE['user_id'];
+
+        $insert_message = $conn->prepare("INSERT INTO `product_enquiries`(id, product_name, enquiries, user_id) VALUES(?,?,?,?)");
+        $insert_message->execute([$id, $product_name, $enquiries, $user_id]);
+        $success_msg[] = 'enquiries submited successfully!';
+        // 
+    }
+} else {
+    $warning_msg[] = 'Please login first!';
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -36,13 +42,6 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    <!-- search form start -->
-    <form action="" id="search-form">
-        <input type="search" placeholder="search here..." name="" id="search-box">
-        <label for="search-box" class="fas fa-search"></label>
-        <i class="fas fa-times" id="close"></i>
-    </form>
-    <!-- search form End -->
     <!-- header section starts  -->
     <?php include 'components/header.php'; ?>
     <!-- header section ends -->
@@ -57,11 +56,11 @@ if (isset($_POST['submit'])) {
     <!-- Contact section start-->
     <section>
         <div class="contact-page-section">
-            <h3 class="sub-heading">Contact</h3>
-            <h1 class="heading">Why choose us</h1>
+            <h3 class="sub-heading">Why choose our product</h3>
+            <h1 class="heading">Product Enquiries</h1>
             <div class="contact-page">
                 <div class="contact-page-left">
-                    <img src="images/oontactpage.webp" alt="">
+                    
                 </div>
                 <div class="contact-page-right">
                     <div class="contact">
@@ -69,40 +68,17 @@ if (isset($_POST['submit'])) {
                             <div class="inputBox">
                                 <div class="input">
                                     <span>Your Name:</span>
-                                    <input type="text" placeholder="enter your name" name="name" id="" required>
-                                </div>
-                                <div class="input">
-                                    <span>Your Email</span>
-                                    <input type="email" placeholder="enter your email" name="email" id="" required>
-                                </div>
-                                <div class="input">
-                                    <span>Your Phone</span>
-                                    <input type="text" placeholder="enter your phone number" name="phone" id="" required>
+                                    <input type="text" placeholder="enter your name" name="product_name" id="" required>
                                 </div>
                                 <div class="input">
                                     <span>Your Messgae:</span>
-                                    <textarea name="message" id="" cols="30" rows="10" placeholder="Write Your Messgae" required></textarea>
-                                </div>
-                                <div class="input">
-                                    <a href="privacy_policy.php">Read : Privacy policy</a>
+                                    <textarea name="enquiries" id="" cols="30" rows="10" placeholder="Write Your Messgae" required></textarea>
                                 </div>
                                 <input type="submit" value="Submit" name="submit" class="btn">
                             </div>
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="contact-box">
-            <h1>Contact Info</h1>
-            <div class="contact-box-info">
-                <a href="#"><i class="fas fa-phone"></i><span>+123-456-7890</span></a>
-                <a href="#"><i class="fas fa-phone"></i><span>+111-222-7890</span></a>
-                <a href="#"><i class="fas fa-envelope"></i><span>info@gwsc.org</span></a>
-                <a href="#"><i class="fas fa-address-card"></i><span>Park Street London, United kingdom</span></a>
             </div>
         </div>
     </section>

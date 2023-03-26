@@ -14,9 +14,7 @@
                 echo '<a class="active" href="login.php">Login</a>';
             }
             ?>
-
         </nav>
-
         <div class="icons">
             <i class="fas fa-bars" id="menu-bar"></i>
             <i class="fas fa-search" id="search-icons"></i>
@@ -47,6 +45,7 @@
                     <?php }; ?>
                     <p><?= $fetch_profile['name']; ?></p>
                     <a href="update_profile.php" class="form-btn">update profile</a>
+                    <a href="product_enquiries.php" class="form-btn">Product Enquiries</a>
                     <?php
                     if ($user_id == 'EUmQeGo4BaVW00oUr9aV') {
                         echo '<a class="form-btn" href="add_pitch_type.php">Add Pitch</a>';
@@ -67,9 +66,3 @@
     </header>
     <!-- header section end -->
 
-    <!-- search form -->
-    <form action="" id="search-form">
-        <input type="search" placeholder="search here..." name="" id="search-box">
-        <label for="search-box" class="fas fa-search"></label>
-        <i class="fas fa-times" id="close"></i>
-    </form>

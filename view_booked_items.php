@@ -2,6 +2,8 @@
 
 include 'components/config.php';
 
+$title = "View Booked items";
+
 if (isset($_COOKIE['user_id'])) {
     $user_id = $_COOKIE['user_id'];
 } else {
@@ -31,7 +33,7 @@ if (isset($_POST['cancel'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome To Wild Swimming and Campining</title>
+    <title><?php echo $title; ?> | Global Wild Swimming and Campining</title>
     <!-- Swipper CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <!-- fontawsam cdn -->
@@ -41,12 +43,19 @@ if (isset($_POST['cancel'])) {
 </head>
 
 <body>
+    <!-- search form start -->
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+    <!-- search form End -->
     <!-- header section start -->
     <?php include 'components/header.php'; ?>
     <!-- header section end -->
 
- <!-- view booked item section start  -->
- <section>
+    <!-- view booked item section start  -->
+    <section>
         <div class="booked-details">
             <h1 class="heading">order details</h1>
             <div class="box-container">
@@ -109,6 +118,10 @@ if (isset($_POST['cancel'])) {
     </section>
     <!-- view booked item section end  -->
 
+    <!-- Chat section start -->
+    <?php include 'components/chat.php'; ?>
+    <!-- Chat section end -->
+
     <!-- Footer section start -->
     <?php include 'components/footer.php'; ?>
     <!-- Footer section end -->
@@ -122,4 +135,5 @@ if (isset($_POST['cancel'])) {
     <?php include 'components/alerts.php'; ?>
 
 </body>
+
 </html>

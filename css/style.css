@@ -914,6 +914,8 @@ section .booking-cart {
 
 .footer {
     background: #eee;
+    text-align: center;
+    padding-top: 3rem;
 }
 
 .footer .box-container {
@@ -948,6 +950,18 @@ section .booking-cart {
     padding: .5rem;
     padding-top: 1.5rem;
     margin-top: 1.5rem;
+}
+
+.footer .page-title{
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+    border-bottom: .1rem solid rgba(0, 0, 0, .1);
+    padding-bottom: 2rem;
+}
+
+.footer .page-title span{
+    color: var(--green);
 }
 
 .footer .credit span {
@@ -1412,9 +1426,9 @@ header .profile .image {
 }
 
 .booking-cart p {
-    font-size: 3rem;
+    font-size: 2rem;
     color: green;
-    text-align: right;
+    text-align: center;
 }
 
 .booking-cart .cart-total-btn-sec {

@@ -1,15 +1,15 @@
 <?php
 include 'components/config.php';
+$title = "Review Posts";
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome To Wild Swimming and Campining</title>
+    <title><?php echo $title; ?> | Global Wild Swimming and Campining</title>
     <!-- Swipper CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <!-- fontawsam cdn -->
@@ -17,7 +17,6 @@ include 'components/config.php';
     <!-- Customer CSS fie link -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <!-- search form -->
     <form action="" id="search-form">
@@ -65,7 +64,11 @@ include 'components/config.php';
     </section>
     <!-- all posts section end -->
 
-
+    
+    <!-- Chat section start -->
+    <?php include 'components/chat.php'; ?>
+    <!-- Chat section end -->
+    
     <!-- Footer section start -->
     <?php include 'components/footer.php'; ?>
     <!-- Footer section start -->
@@ -79,5 +82,4 @@ include 'components/config.php';
 
     <?php include 'components/alerts.php'; ?>
 </body>
-
 </html>

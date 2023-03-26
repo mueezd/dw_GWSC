@@ -1,5 +1,8 @@
 <?php
 @include 'config.php';
+
+$title = "User Page";
+
 session_start();
 
 if (!isset($_SESSION['user_name'])) {
@@ -17,7 +20,7 @@ if (!isset($_SESSION['user_name'])) {
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $title; ?> | Global Wild Swimming and Campining</title>
     <title>User-GWSC</title>
     <!-- Swipper CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
@@ -63,7 +66,7 @@ if (!isset($_SESSION['user_name'])) {
     <section class="adminpage">
         <div class="container">
             <div class="content">
-                <h3>Hi, <span>user</span></h3> 
+                <h3>Hi, <span>user</span></h3>
                 <h1>Welcome <span><?php echo $_SESSION['user_name'] ?></span></h1>
                 <p>this is an user page</p>
                 <a href="login_form.php" class="btn">login</a>
@@ -75,49 +78,15 @@ if (!isset($_SESSION['user_name'])) {
     <!-- admin section end -->
 
 
-
+    <!-- Chat section start -->
+    <?php include 'components/chat.php'; ?>
+    <!-- Chat section end -->
 
 
     <!-- Footer section start -->
-    <section class="footer">
-        <div class="box-container">
-            <div class="box">
-                <h3>locations</h3>
-                <a href="#">india</a>
-                <a href="#">japan</a>
-                <a href="#">russia</a>
-                <a href="#">USA</a>
-                <a href="#">UK</a>
-                <a href="#">Bangladesh</a>
-            </div>
-            <div class="box">
-                <h3>Quick Links</h3>
-                <a href="#">information</a>
-                <a href="#">pitch Type</a>
-                <a href="#">Availability</a>
-                <a href="#">Reviews</a>
-                <a href="#">Features</a>
-                <a href="#">Contact</a>
-                <a href="#">Local Attractions</a>
-            </div>
-            <div class="box">
-                <h3>Contact Info</h3>
-                <a href="#">+123-456-7890</a>
-                <a href="#">+111-222-7890</a>
-                <a href="#">info@gwsc.org</a>
-                <a href="#">Park Street London, United kingdom</a>
-            </div>
-            <div class="box">
-                <h3>follow us</h3>
-                <a href="#">facebook</a>
-                <a href="#">twitter</a>
-                <a href="#">instagram</a>
-                <a href="#">youtube</a>
-            </div>
-        </div>
-        <div class="credit">copyright @ 2023 by <span>deepro__</span></div>
-    </section>
+    <?php include 'components/footer.php' ?>
     <!-- Footer section end -->
+
 
 
     <!-- Swipper JS CND -->

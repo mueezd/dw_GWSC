@@ -1,8 +1,12 @@
 <?php
-@include 'components/config.php';
 
+@include 'components/config.php';
+$title = "Home Page";
 $visitor_counter_add = $conn->prepare("UPDATE visitor_counter SET counter = counter+1 WHERE id = 1;");
 $visitor_counter_add->execute();
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +16,7 @@ $visitor_counter_add->execute();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome To Wild Swimming and Campining</title>
+    <title><?php echo $title; ?> | Global Wild Swimming and Campining</title>
     <!-- Swipper CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <!-- fontawsam cdn -->
@@ -21,7 +25,14 @@ $visitor_counter_add->execute();
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body id="#searchId">
+    <!-- search form start -->
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+    <!-- search form End -->
     <!-- header section start -->
     <?php include 'components/header.php'; ?>
     <!-- header section end -->
@@ -38,7 +49,7 @@ $visitor_counter_add->execute();
                         <a href="register.php" class="btn">Register Now</a>
                     </div>
                     <div class="image">
-                        <img src="images/home-1.jpg" alt="">
+                        <img src="images/home-1.jpg" alt="Image of slide for register a new user">
                     </div>
                 </div>
                 <div class="swiper-slide slide">
@@ -358,7 +369,9 @@ $visitor_counter_add->execute();
         </div>
     </section>
     <!-- News And Updates using RSS feed section End  -->
-
+    <!-- Chat section start -->
+    <?php include 'components/chat.php'; ?>
+    <!-- Chat section end -->
     <!-- Footer section start -->
     <?php include 'components/footer.php'; ?>
     <!-- Footer section end -->
@@ -370,7 +383,6 @@ $visitor_counter_add->execute();
     <!-- custom js file link -->
     <script src="js/script.js"></script>
     <?php include 'components/alerts.php'; ?>
-
 </body>
 
 </html>

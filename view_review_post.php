@@ -1,6 +1,8 @@
 <?php
 include 'components/config.php';
 
+$title = "View Review Posts";
+
 if (isset($_GET['get_id'])) {
     $get_id = $_GET['get_id'];
 } else {
@@ -33,7 +35,7 @@ if (isset($_POST['delete_review'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome To Wild Swimming and Campining</title>
+    <title><?php echo $title; ?> | Global Wild Swimming and Campining</title>
     <!-- Swipper CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <!-- fontawsam cdn -->
@@ -235,6 +237,11 @@ if (isset($_POST['delete_review'])) {
         </div>
     </section>
     <!-- reviews section ends -->
+
+    <!-- Chat section start -->
+    <?php include 'components/chat.php'; ?>
+    <!-- Chat section end -->
+
     <!-- Footer section start -->
     <?php include 'components/footer.php'; ?>
     <!-- Footer section start -->
