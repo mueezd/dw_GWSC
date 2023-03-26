@@ -384,5 +384,4 @@ $visitor_counter_add->execute();
     <script src="js/script.js"></script>
     <?php include 'components/alerts.php'; ?>
 </body>
-
 </html>
