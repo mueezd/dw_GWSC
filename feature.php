@@ -151,10 +151,15 @@ $title = "Feature";
         <div id="sidebar" class="neumorphic">
             <ul class="menu">
                 <li>FORM Swim Goggles</li>
+                <img class="sidebar-image" src="images/WT-1.jpg" alt="">
                 <li>Apple Watch Series 8</li>
+                <img class="sidebar-image" src="images/WT-2.jpg" alt="">
                 <li>FINIS Smart Swim Goggles</li>
+                <img class="sidebar-image" src="images/WT-3.jpg" alt="">
                 <li>FitBit Inspire 3</li>
+                <img class="sidebar-image" src="images/WT-4.jpg" alt="">
                 <li>XMetrics Pro Swim Tracker</li>
+                <img class="sidebar-image" src="images/WT-5.jpg" alt="">
             </ul>
             <div id="toggle" class="neumorphic">
                 <h1>wearable technology categories</h1>

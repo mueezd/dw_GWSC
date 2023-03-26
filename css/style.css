@@ -1839,6 +1839,14 @@ section .local-atr {
     list-style: none;
     padding: 0;
     margin: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sidebar-image {
+    width: 20rem;
+    border-radius: 3rem;
+    padding: 1rem;
 }
 
 .menu li {

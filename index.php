@@ -372,6 +372,7 @@ $visitor_counter_add->execute();
     <!-- Chat section start -->
     <?php include 'components/chat.php'; ?>
     <!-- Chat section end -->
+    
     <!-- Footer section start -->
     <?php include 'components/footer.php'; ?>
     <!-- Footer section end -->
